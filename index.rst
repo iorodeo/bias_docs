@@ -4,13 +4,13 @@
    contain the root `toctree` directive.
 
 
-Contents:
+Contents
 ========
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   build_environ_setup.rst
+   build_environ_setup_win
 
 
 Indices and tables

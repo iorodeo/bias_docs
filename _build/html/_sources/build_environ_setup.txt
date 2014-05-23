@@ -1,12 +1,22 @@
-Setting up a build environment for BIAS
-=======================================
+
+
+Setting up a build environment for BIAS on Windows
+==================================================
 
 In this section we describe how to set up a build environment for BIAS.
-Currently on Window (7 & 8) are  covered, however we hope to add linux shortly. 
+on Window (7 & 8).  
 
 
-Windows 7 & 8
--------------
+.. toctree::
+   :maxdepth: 2
+
+   self
+
+
+   
+
+
+
 
 Setting up a build environment on Windows consists of the following steps:
 
@@ -66,8 +76,3 @@ To do ...
 
 
 
-
-Linux
------
-
-To do ...
