@@ -8,6 +8,7 @@ on window (7 & 8).  this process consists of the following steps:
  #. :ref:`section_win_install_gcc` 
  #. :ref:`section_win_install_perl` (required for qt build)
  #. :ref:`section_win_install_qt` 
+ #. :ref:`section_win_install_cmake`
  #. :ref:`section_win_install_opencv`
  #. :ref:`section_win_install_hg`
  #. :ref:`section_win_install_bias`
@@ -113,7 +114,7 @@ then you would want to add c:\\qt\\qt-4.8.5\\bin to the windows path.
 
 Finally, test that qt is working.  In the qt directory you will find a
 directory called "examples". Try running several of the examples in this
-directory. most should work - all except those depending on webkit, script,
+directory. Most should work - all except those depending on webkit, script,
 etc. which we excluded during the build. The executables will be found in the
 "debug" sub-folder of the example. An example, which should work is
 "examples\\dialog\\tabdialog".  Note, before running the examples you may want to
@@ -121,8 +122,12 @@ open a new command window to ensure that the additions to the windows PATH
 (above) have been applied. 
 
 
+.. _section_win_install_cmake:
 
+Download and install CMake
+==========================
 
+To do ..
 
 
 .. _section_win_install_opencv:
