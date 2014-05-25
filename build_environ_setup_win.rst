@@ -108,7 +108,7 @@ Once the configuration has finished the next step is to build qt using
 
   mingw32-make
 
-This will take awhile. after the build is finished you will need to qt's bin
+This will take awhile. After the build is finished you will need to qt's bin
 directory to the windows path. for example, if qt is installed in c:\\qt\qt-4.8.5
 then you would want to add c:\\qt\\qt-4.8.5\\bin to the windows path.
 
