@@ -52,10 +52,12 @@ on window (7 &amp; 8).  this process consists of the following steps:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><a class="reference internal" href="#section-win-install-gcc"><em>Download and install gcc</em></a></li>
-<li><a class="reference internal" href="#section-win-install-perl"><em>download and install activestate perl</em></a> (required for qt build)</li>
-<li><a class="reference internal" href="#section-win-install-qt"><em>download, configure and build qt</em></a></li>
+<li><a class="reference internal" href="#section-win-install-perl"><em>Download and install ActiveState Perl</em></a> (required for qt build)</li>
+<li><a class="reference internal" href="#section-win-install-qt"><em>Download, configure and build Qt</em></a></li>
 <li><a class="reference internal" href="#section-win-install-cmake"><em>Download and install CMake</em></a></li>
+<li><a class="reference internal" href="#section-win-install-eigen"><em>Downlad an unpack Eigen</em></a></li>
 <li><a class="reference internal" href="#section-win-install-opencv"><em>Download Configure, and build OpenCV</em></a></li>
+<li><a class="reference internal" href="#section-win-install-flycapture2"><em>Install Point Grey&#8217;s FlyCapture2 libraray, a camera, etc.</em></a></li>
 <li><a class="reference internal" href="#section-win-install-hg"><em>Install mercurial</em></a></li>
 <li><a class="reference internal" href="#section-win-install-bias"><em>Download and build the latest version of BIAS</em></a></li>
 </ol>
@@ -95,7 +97,7 @@ c:\mingw64\bin on my windows path. You can test that everything works by
 opening command line and trying to run &#8220;g++ -v&#8221; from the command line.</p>
 </div>
 <div class="section" id="download-and-install-activestate-perl">
-<span id="section-win-install-perl"></span><h2>download and install activestate perl<a class="headerlink" href="#download-and-install-activestate-perl" title="Permalink to this headline">¶</a></h2>
+<span id="section-win-install-perl"></span><h2>Download and install ActiveState Perl<a class="headerlink" href="#download-and-install-activestate-perl" title="Permalink to this headline">¶</a></h2>
 <p>Perl is used when building the qt library. I recommend using activestate&#8217;s
 version of perl.  For my latest build I used version 5.16.3.1604. Note, I&#8217;m not
 sure if the verision matters - e.g. version 5.18.2.1802 might work fine. In any
@@ -105,7 +107,7 @@ in the c:\perl64 directory then the following two items should be on your window
 c:\perl64\bin and  c:\perl64\site\bin.</p>
 </div>
 <div class="section" id="download-configure-and-build-qt">
-<span id="section-win-install-qt"></span><h2>download, configure and build qt<a class="headerlink" href="#download-configure-and-build-qt" title="Permalink to this headline">¶</a></h2>
+<span id="section-win-install-qt"></span><h2>Download, configure and build Qt<a class="headerlink" href="#download-configure-and-build-qt" title="Permalink to this headline">¶</a></h2>
 <p>Bias currently uses qt version 4.8.5.  This can be downloaded from here
 <a class="reference external" href="https://download.qt-project.org/official_releases/qt/4.8/4.8.5/">https://download.qt-project.org/official_releases/qt/4.8/4.8.5/</a> in particular
 you will want to download the file <a class="reference external" href="https://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.zip">qt-everywhere-opensource-src-4.8.5.zip</a>.</p>
@@ -126,9 +128,14 @@ options -opensource, -no-webkit, -no-script, -qt-zlib  as follows</p>
 <div class="highlight-none"><div class="highlight"><pre>mingw32-make
 </pre></div>
 </div>
-<p>This will take awhile. After the build is finished you will need to qt&#8217;s bin
-directory to the windows path. for example, if qt is installed in c:\qtqt-4.8.5
-then you would want to add c:\qt\qt-4.8.5\bin to the windows path.</p>
+<p>This will take awhile. After the build is finished you will need to add qt&#8217;s
+bin directory to the windows path and create a new environment variable named
+QTDIR whose value is the path to the root directory of your qt library.  For
+example, if qt is installed in c:\qt\qt-4.8.5 then you would want to</p>
+<ul class="simple">
+<li>add c:\qt\qt-4.8.5\bin to the windows PATH and</li>
+<li>set the QTDIR environment variable equal to c:\qt\qt-4.8.5</li>
+</ul>
 <p>Finally, test that qt is working.  In the qt directory you will find a
 directory called &#8220;examples&#8221;. Try running several of the examples in this
 directory. Most should work - all except those depending on webkit, script,
@@ -140,19 +147,125 @@ open a new command window to ensure that the additions to the windows PATH
 </div>
 <div class="section" id="download-and-install-cmake">
 <span id="section-win-install-cmake"></span><h2>Download and install CMake<a class="headerlink" href="#download-and-install-cmake" title="Permalink to this headline">¶</a></h2>
-<p>To do ..</p>
+<p>CMake is required for building both OpenCV and BIAS.  The  latest version of CMake can be found here</p>
+<p><a class="reference external" href="http://www.cmake.org/cmake/resources/resources.html">http://www.cmake.org/cmake/resources/resources.html</a>.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Download the Window (Win32 Installer) cmake-2.8.xx.x-win32-x86.exe and install
+the program as usual.</li>
+<li>After installing make sure that CMake is added to the windows PATH. You should
+see something like  &#8220;C:Program Files(x86)Cmake 2.8bin&#8221; on your path. Also
+you should be able to run cmake from a command window.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="downlad-an-unpack-eigen">
+<span id="section-win-install-eigen"></span><h2>Downlad an unpack Eigen<a class="headerlink" href="#downlad-an-unpack-eigen" title="Permalink to this headline">¶</a></h2>
+<p>Eigen is a C++ template library for linear algebra which is used by OpenCV.
+Eigen isn&#8217;t required, but it can speed up some computations.  You can download the latest
+version of eigen from here <a class="reference external" href="http://eigen.tuxfamily.org/index.php?title=Main_Page">http://eigen.tuxfamily.org/index.php?title=Main_Page</a></p>
+<p>Note, eigen is a  pure template library defined in the headers so we don&#8217;t need
+to build anything.  Just unpack the latest version of the library  to a
+convenient directory.</p>
 </div>
 <div class="section" id="download-configure-and-build-opencv">
 <span id="section-win-install-opencv"></span><h2>Download Configure, and build OpenCV<a class="headerlink" href="#download-configure-and-build-opencv" title="Permalink to this headline">¶</a></h2>
-<p>To do ..</p>
+<div class="section" id="download">
+<h3>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
+<p>Clone the latest version of OpenCV from GitHub here
+<a class="reference external" href="https://github.com/Itseez/opencv.git">https://github.com/Itseez/opencv.git</a>.</p>
+<p>Note, as I haven&#8217;t updated the library in a while (about a year) it is possible
+that there have been sufficient changes to OpenCV such that the latest version
+is no longer compatible BIAS. In which case in might be necessary to roll back
+commit which is last know work -  which is 0e7ca71dcc1b53430893362faf302c05c8695524.
+The following command should enable you to rollback the repository from this commit
+in  tempory branch named &#8216;old-build-temp&#8217;.</p>
+<div class="highlight-bash"><div class="highlight"><pre>git checkout -b old-build-temp 0e7ca71dcc1b53430893362faf302c05c8695524.
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-and-build">
+<h3>Configure and Build<a class="headerlink" href="#configure-and-build" title="Permalink to this headline">¶</a></h3>
+<p>Start by creating a build directory. Note, this can be anywhere and named
+anything. However, I typically create a directory named &#8216;build&#8217; in the parent
+directory of the opencv&#8217;s source directory - i.e., one directory up from the root
+of the source tree.</p>
+<p>Configure OpenCV by running</p>
+<div class="highlight-bash"><div class="highlight"><pre>cmake-gui.exe
+</pre></div>
+</div>
+<p>In the configuration tool perform the following steps</p>
+<blockquote>
+<div><ul class="simple">
+<li>Select the source and build directories</li>
+<li>Run configure</li>
+<li>Set the build type to MinGW</li>
+<li>Make sure that the following options are selected: WITH_QT, WITH_EIGEN</li>
+<li>Set EIGEN_INCLUDE_PATH to point to the location of the Eigen library</li>
+<li>Re-run configure</li>
+<li>Run generate</li>
+</ul>
+</div></blockquote>
+<p>Next, exit the configuration tool and  build open by running the following command</p>
+<div class="highlight-bash"><div class="highlight"><pre>mingw32-make
+</pre></div>
+</div>
+<p>After, building the library and the &#8216;build/bin&#8217; sub-directory to the windows path, e.g.,</p>
+<div class="highlight-none"><div class="highlight"><pre>C:\&lt;PATH-TO-BUILD-DIRECTORY&gt;\build\bin
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="install-point-grey-s-flycapture2-libraray-a-camera-etc">
+<span id="section-win-install-flycapture2"></span><h2>Install Point Grey&#8217;s FlyCapture2 libraray, a camera, etc.<a class="headerlink" href="#install-point-grey-s-flycapture2-libraray-a-camera-etc" title="Permalink to this headline">¶</a></h2>
+<p>Links and instructions for downloading and installing the FlyCapture2 library from Point Grey can be found here</p>
+<p><a class="reference external" href="http://ww2.ptgrey.com/sdk/flycap">http://ww2.ptgrey.com/sdk/flycap</a></p>
+<p>After installing the library use the FlyCap2 program to verify that the cameras are working.</p>
+<p>Finally, add the FlyCapture2 library to the Windows PATH. Note, this may or may not be done automatically. Also, the path
+will very depending on whether the host system is 32bit or 64bit.</p>
+<p>On 64bit Windows</p>
+<div class="highlight-none"><div class="highlight"><pre>C:\Program Files\Point Grey Research\FlyCapture2\bin64
+</pre></div>
+</div>
+<p>On 32bit Windows</p>
+<div class="highlight-none"><div class="highlight"><pre>C:\Program Files\Point Grey Research\FlyCapture2\bin
+</pre></div>
+</div>
 </div>
 <div class="section" id="install-mercurial">
 <span id="section-win-install-hg"></span><h2>Install mercurial<a class="headerlink" href="#install-mercurial" title="Permalink to this headline">¶</a></h2>
-<p>To do ..</p>
+<p>BIAS uses the <a class="reference external" href="http://mercurial.selenic.com/">mercurial</a> revision control system.
+Which can be downloaded from here</p>
+<p><a class="reference external" href="http://mercurial.selenic.com/downloads">http://mercurial.selenic.com/downloads</a></p>
+<p>Download and install mercurial.  Make sure that it is on the windows PATH  e.g.,</p>
+<div class="highlight-none"><div class="highlight"><pre>C:\Program Files\Mercurial\
+</pre></div>
+</div>
+<p>and can be run from the command line using the &#8216;hg&#8217; command.</p>
 </div>
 <div class="section" id="download-and-build-the-latest-version-of-bias">
 <span id="section-win-install-bias"></span><h2>Download and build the latest version of BIAS<a class="headerlink" href="#download-and-build-the-latest-version-of-bias" title="Permalink to this headline">¶</a></h2>
-<p>To do ...</p>
+<p>Download the latest version of BIAS w/ mercurial using the following command</p>
+<div class="highlight-none"><div class="highlight"><pre>hg clone https://bitbucket.org/iorodeo/bias
+</pre></div>
+</div>
+<p>Create a build directory.  Again this can be named anything and located
+anywhere. However, I typically create a directory named &#8216;build&#8217; in the root
+directory of BIAS&#8217;s source tree. This directory is the projects &#8221;.hgignore&#8221; file
+so its contents won&#8217;t be tracked by mercurial.</p>
+<p>In the build directory run the following
+command</p>
+<div class="highlight-none"><div class="highlight"><pre>cmake -G &quot;MinGW Makefiles&quot;  &lt;path to root of bias source&gt;
+</pre></div>
+</div>
+<p>For example if the build directory is in the root directory of the source tree this command would be</p>
+<div class="highlight-none"><div class="highlight"><pre>cmake -G &quot;MinGW Makefiles&quot; ../
+</pre></div>
+</div>
+<p>Next Build BIAS using the following command from inside the build directory</p>
+<div class="highlight-none"><div class="highlight"><pre>mingw32-make
+</pre></div>
+</div>
 </div>
 </div>
 

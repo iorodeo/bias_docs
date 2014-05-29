@@ -9,7 +9,9 @@ on window (7 & 8).  this process consists of the following steps:
  #. :ref:`section_win_install_perl` (required for qt build)
  #. :ref:`section_win_install_qt` 
  #. :ref:`section_win_install_cmake`
+ #. :ref:`section_win_install_eigen`
  #. :ref:`section_win_install_opencv`
+ #. :ref:`section_win_install_flycapture2`
  #. :ref:`section_win_install_hg`
  #. :ref:`section_win_install_bias`
 
@@ -58,7 +60,7 @@ opening command line and trying to run "g++ -v" from the command line.
 
 .. _section_win_install_perl:
 
-download and install activestate perl
+Download and install ActiveState Perl
 ======================================
 
 Perl is used when building the qt library. I recommend using activestate's
@@ -73,7 +75,7 @@ c:\\perl64\\bin and  c:\\perl64\\site\\bin.
 
 .. _section_win_install_qt:
 
-download, configure and build qt
+Download, configure and build Qt
 ================================
 
 Bias currently uses qt version 4.8.5.  This can be downloaded from here
@@ -108,9 +110,15 @@ Once the configuration has finished the next step is to build qt using
 
   mingw32-make
 
-This will take awhile. After the build is finished you will need to qt's bin
-directory to the windows path. for example, if qt is installed in c:\\qt\qt-4.8.5
-then you would want to add c:\\qt\\qt-4.8.5\\bin to the windows path.
+This will take awhile. After the build is finished you will need to add qt's
+bin directory to the windows path and create a new environment variable named
+QTDIR whose value is the path to the root directory of your qt library.  For
+example, if qt is installed in c:\\qt\\qt-4.8.5 then you would want to  
+
+* add c:\\qt\\qt-4.8.5\\bin to the windows PATH and
+
+* set the QTDIR environment variable equal to c:\\qt\\qt-4.8.5 
+
 
 Finally, test that qt is working.  In the qt directory you will find a
 directory called "examples". Try running several of the examples in this
@@ -127,7 +135,31 @@ open a new command window to ensure that the additions to the windows PATH
 Download and install CMake
 ==========================
 
-To do ..
+CMake is required for building both OpenCV and BIAS.  The  latest version of CMake can be found here 
+
+http://www.cmake.org/cmake/resources/resources.html.
+
+  * Download the Window (Win32 Installer) cmake-2.8.xx.x-win32-x86.exe and install
+    the program as usual. 
+  
+  * After installing make sure that CMake is added to the windows PATH. You should
+    see something like  "C:\Program Files(x86)\Cmake 2.8\bin" on your path. Also
+    you should be able to run cmake from a command window. 
+    
+
+
+.. _section_win_install_eigen:
+
+Downlad an unpack Eigen
+=======================
+
+Eigen is a C++ template library for linear algebra which is used by OpenCV.
+Eigen isn't required, but it can speed up some computations.  You can download the latest 
+version of eigen from here http://eigen.tuxfamily.org/index.php?title=Main_Page
+
+Note, eigen is a  pure template library defined in the headers so we don't need
+to build anything.  Just unpack the latest version of the library  to a
+convenient directory.
 
 
 .. _section_win_install_opencv:
@@ -135,14 +167,112 @@ To do ..
 Download Configure, and build OpenCV
 ====================================
 
-To do ..
+
+Download
+--------
+
+Clone the latest version of OpenCV from GitHub here
+https://github.com/Itseez/opencv.git.  
+
+Note, as I haven't updated the library in a while (about a year) it is possible
+that there have been sufficient changes to OpenCV such that the latest version
+is no longer compatible BIAS. In which case in might be necessary to roll back
+commit which is last know work -  which is 0e7ca71dcc1b53430893362faf302c05c8695524.
+The following command should enable you to rollback the repository from this commit
+in  tempory branch named 'old-build-temp'.
+
+.. code-block:: bash
+
+  git checkout -b old-build-temp 0e7ca71dcc1b53430893362faf302c05c8695524. 
+
+
+Configure and Build
+-------------------
+ 
+Start by creating a build directory. Note, this can be anywhere and named
+anything. However, I typically create a directory named 'build' in the parent
+directory of the opencv's source directory - i.e., one directory up from the root
+of the source tree.   
+    
+Configure OpenCV by running 
+
+.. code-block:: bash
+
+  cmake-gui.exe
+
+In the configuration tool perform the following steps
+
+  * Select the source and build directories 
+  * Run configure
+  * Set the build type to MinGW
+  * Make sure that the following options are selected: WITH_QT, WITH_EIGEN
+  * Set EIGEN_INCLUDE_PATH to point to the location of the Eigen library 
+  * Re-run configure 
+  * Run generate
+
+Next, exit the configuration tool and  build open by running the following command
+
+.. code-block:: bash
+
+  mingw32-make
+
+
+After, building the library and the 'build/bin' sub-directory to the windows path, e.g., 
+
+.. code-block:: none
+
+  C:\<PATH-TO-BUILD-DIRECTORY>\build\bin 
+
+
+
+.. _section_win_install_flycapture2:
+
+Install Point Grey's FlyCapture2 libraray, a camera, etc.
+=========================================================
+
+Links and instructions for downloading and installing the FlyCapture2 library from Point Grey can be found here
+
+http://ww2.ptgrey.com/sdk/flycap
+
+After installing the library use the FlyCap2 program to verify that the cameras are working.
+
+Finally, add the FlyCapture2 library to the Windows PATH. Note, this may or may not be done automatically. Also, the path
+will very depending on whether the host system is 32bit or 64bit.
+
+On 64bit Windows
+
+.. code-block:: none
+
+  C:\Program Files\Point Grey Research\FlyCapture2\bin64
+
+On 32bit Windows
+
+
+.. code-block:: none
+
+  C:\Program Files\Point Grey Research\FlyCapture2\bin
+
 
 .. _section_win_install_hg:
 
 Install mercurial
 =================
 
-To do ..
+
+BIAS uses the `mercurial <http://mercurial.selenic.com/>`_ revision control system.
+Which can be downloaded from here
+
+http://mercurial.selenic.com/downloads
+
+Download and install mercurial.  Make sure that it is on the windows PATH  e.g., 
+
+.. code-block:: none
+
+  C:\Program Files\Mercurial\
+
+
+and can be run from the command line using the 'hg' command.
+
 
 .. _section_win_install_bias:
 
@@ -150,8 +280,37 @@ Download and build the latest version of BIAS
 =============================================
 
 
-To do ...
+Download the latest version of BIAS w/ mercurial using the following command
+
+.. code-block:: none
+
+  hg clone https://bitbucket.org/iorodeo/bias
 
 
+Create a build directory.  Again this can be named anything and located
+anywhere. However, I typically create a directory named 'build' in the root
+directory of BIAS's source tree. This directory is the projects ".hgignore" file
+so its contents won't be tracked by mercurial.
+
+In the build directory run the following
+command
+
+.. code-block:: none
+
+  cmake -G "MinGW Makefiles"  <path to root of bias source>
+
+For example if the build directory is in the root directory of the source tree this command would be
+
+.. code-block:: none
+
+  cmake -G "MinGW Makefiles" ../
 
 
+Next Build BIAS using the following command from inside the build directory
+
+.. code-block:: none
+
+  mingw32-make
+
+
+ 
