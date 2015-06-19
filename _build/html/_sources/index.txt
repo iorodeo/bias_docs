@@ -10,6 +10,7 @@ Contents
 .. toctree::
    :maxdepth: 1
 
+   ext_control_http_cmds
    build_environ_setup_win
 
 
