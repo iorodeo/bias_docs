@@ -57,7 +57,131 @@ server is enabled. The can be done by checking the &#8220;Enabled&#8221; item un
 <img alt="_images/bias_server_menu.png" src="_images/bias_server_menu.png" />
 </div>
 <p>The port number used by the external control server, when enabled, is shown in
-the second menu item - e.g. Port(5010)...</p>
+the second menu item - e.g. Port(5010).</p>
+<div class="section" id="basic-command-structure">
+<h2>Basic Command Structure<a class="headerlink" href="#basic-command-structure" title="Permalink to this headline">¶</a></h2>
+<p>Commands are sent using http GET request as follows:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?&lt;commandName&gt;<span class="o">=</span>&lt;commandArgs&gt;
+</pre></div>
+</div>
+<p>where &#8220;commandName&#8221; is the name of the and &#8220;commandArg&#8221; is the command argument
+(possibley empty).  In this example the &#8220;localhost&#8221; is used for the devie
+address and the port is assumed to be 5010. The local computers IP address may
+used in place of &#8220;localhost&#8221;.</p>
+<p>As an example consider the &#8220;stop-capture&#8221; command which instructs BIAS to stop
+capturing images from the camera. This command can be issued as follows:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?connect
+</pre></div>
+</div>
+<p>In response to each command BIAS will return a JSON object containing the name
+of the command, a flag indicating the success or failure of the command, a
+message indicating the reason for failure (if failure occurred), and the
+desired response value (if successful).  For example, the response to a
+successful &#8220;set-video-file&#8221; command would be as follows:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;command&quot;</span> <span class="o">:</span> <span class="s2">&quot;set-video-file&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;message&quot;</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;success&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-of-commands">
+<h2>List of Commands<a class="headerlink" href="#list-of-commands" title="Permalink to this headline">¶</a></h2>
+<p>This list of commands accepted by BIAS is as follows:
+<a class="reference internal" href="build_environ_setup_win.html#section-win-install-gcc"><em>Download and install gcc</em></a></p>
+<ul class="simple">
+<li><a class="reference internal" href="#section-cmd-connect"><em>connect</em></a></li>
+<li><a class="reference internal" href="#section-cmd-disconnect"><em>disconnect</em></a></li>
+<li><a class="reference internal" href="#section-cmd-start-capture"><em>start-capture</em></a></li>
+<li><a class="reference internal" href="#section-cmd-stop-capture"><em>stop-capture</em></a></li>
+<li><a class="reference internal" href="#section-cmd-get-configuration"><em>get-configuration</em></a></li>
+<li><a class="reference internal" href="#section-cmd-set-configuration"><em>set-configuration</em></a></li>
+<li><a class="reference internal" href="#section-cmd-enable-logging"><em>enable-logging</em></a></li>
+<li><a class="reference internal" href="#section-cmd-disable-logging"><em>disable-logging</em></a></li>
+<li><a class="reference internal" href="#section-cmd-load-configuration"><em>load-configuration</em></a></li>
+<li><a class="reference internal" href="#section-cmd-save-configuration"><em>save-configuration</em></a></li>
+<li><a class="reference internal" href="#section-cmd-close"><em>close</em></a></li>
+<li><a class="reference internal" href="#section-cmd-get-frame-count"><em>get-frame-count</em></a></li>
+<li><a class="reference internal" href="#section-cmd-get-camera-guid"><em>get-camera-guid</em></a></li>
+<li><a class="reference internal" href="#section-cmd-get-status"><em>get-status</em></a></li>
+<li><a class="reference internal" href="#section-cmd-set-video-file"><em>set-video-file</em></a></li>
+<li><a class="reference internal" href="#section-cmd-get-video-file"><em>get-video-file</em></a></li>
+<li><a class="reference internal" href="#section-cmd-get-time-stamp"><em>get-time-stamp</em></a></li>
+<li><a class="reference internal" href="#section-cmd-get-frames-per-sec"><em>get-frames-per-sec</em></a></li>
+<li><a class="reference internal" href="#section-cmd-set-window-geometry"><em>set-window-geometry</em></a></li>
+<li><a class="reference internal" href="#section-cmd-get-window-geometry"><em>get-window-geometry</em></a></li>
+<li><a class="reference internal" href="#section-cmd-plugin-cmd"><em>plugin-cmd</em></a></li>
+<li><a class="reference internal" href="#section-cmd-set-camera-name"><em>set-camera-name</em></a></li>
+</ul>
+<div class="section" id="connect">
+<span id="section-cmd-connect"></span><h3>connect<a class="headerlink" href="#connect" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="disconnect">
+<span id="section-cmd-disconnect"></span><h3>disconnect<a class="headerlink" href="#disconnect" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="start-capture">
+<span id="section-cmd-start-capture"></span><h3>start-capture<a class="headerlink" href="#start-capture" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="stop-capture">
+<span id="section-cmd-stop-capture"></span><h3>stop-capture<a class="headerlink" href="#stop-capture" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="get-configuration">
+<span id="section-cmd-get-configuration"></span><h3>get-configuration<a class="headerlink" href="#get-configuration" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="set-configuration">
+<span id="section-cmd-set-configuration"></span><h3>set-configuration<a class="headerlink" href="#set-configuration" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="enable-logging">
+<span id="section-cmd-enable-logging"></span><h3>enable-logging<a class="headerlink" href="#enable-logging" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="disable-logging">
+<span id="section-cmd-disable-logging"></span><h3>disable-logging<a class="headerlink" href="#disable-logging" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="load-configuration">
+<span id="section-cmd-load-configuration"></span><h3>load-configuration<a class="headerlink" href="#load-configuration" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="save-configuration">
+<span id="section-cmd-save-configuration"></span><h3>save-configuration<a class="headerlink" href="#save-configuration" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="close">
+<span id="section-cmd-close"></span><h3>close<a class="headerlink" href="#close" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="get-frame-count">
+<span id="section-cmd-get-frame-count"></span><h3>get-frame-count<a class="headerlink" href="#get-frame-count" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="get-camera-guid">
+<span id="section-cmd-get-camera-guid"></span><h3>get-camera-guid<a class="headerlink" href="#get-camera-guid" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="get-status">
+<span id="section-cmd-get-status"></span><h3>get-status<a class="headerlink" href="#get-status" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="set-video-file">
+<span id="section-cmd-set-video-file"></span><h3>set-video-file<a class="headerlink" href="#set-video-file" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="get-video-file">
+<span id="section-cmd-get-video-file"></span><h3>get-video-file<a class="headerlink" href="#get-video-file" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="get-time-stamp">
+<span id="section-cmd-get-time-stamp"></span><h3>get-time-stamp<a class="headerlink" href="#get-time-stamp" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="get-frames-per-sec">
+<span id="section-cmd-get-frames-per-sec"></span><h3>get-frames-per-sec<a class="headerlink" href="#get-frames-per-sec" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="set-window-geometry">
+<span id="section-cmd-set-window-geometry"></span><h3>set-window-geometry<a class="headerlink" href="#set-window-geometry" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="get-window-geometry">
+<span id="section-cmd-get-window-geometry"></span><h3>get-window-geometry<a class="headerlink" href="#get-window-geometry" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="plugin-cmd">
+<span id="section-cmd-plugin-cmd"></span><h3>plugin-cmd<a class="headerlink" href="#plugin-cmd" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="set-camera-name">
+<span id="section-cmd-set-camera-name"></span><h3>set-camera-name<a class="headerlink" href="#set-camera-name" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
 
