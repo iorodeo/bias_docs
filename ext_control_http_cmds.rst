@@ -153,7 +153,7 @@ argument.
 
     http://localhost:5010/?set-configuration=<json configuration object>
 
-Note, the the camera must be connected for this command to be successfull. In
+Note, the camera must be connected for this command to be successful. In
 addition the configuration data must be valid for the users camera make and
 model.  An example of setting the configuration for a Point Grey Flea3
 FL3-U3-13Y3M camera is shown  below.  
@@ -242,7 +242,7 @@ Save the current BIAS configuration to the specified file.
 
     http://localhost:5010/?save-configuration=<json configuration file>
 
-Note, the camera must be connected for the commmand to be successful. An
+Note, the camera must be connected for the command to be successful. An
 example of the command for creating a configuration file named "my_config.json"
 in the "C:\Users\Will\Documents" directory is a given below.
 
@@ -309,7 +309,7 @@ Returns status information for the BIAS application in JSON format.
 
     http://localhost:5010/?get-status
 
-The status information is returned in the "value" field of the reponse. The
+The status information is returned in the "value" field of the response. The
 information includes following fields:
 
 * capturing   - true/false indicating  whether or not the camera is connected, 
