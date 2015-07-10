@@ -77,7 +77,6 @@ This list of commands accepted by BIAS is as follows:
 * :ref:`section_cmd_set-window-geometry`
 * :ref:`section_cmd_get-window-geometry`
 * :ref:`section_cmd_plugin-cmd`
-* :ref:`section_cmd_set-camera-name`
 
 .. _section_cmd_connect:
 
@@ -408,24 +407,88 @@ The time stamp is return in the value field of the response and in is units
 
 get-frames-per-sec
 ------------------
+Returns the  (measured) frame rate for the current capture (zero otherwise).  
 
-.. _section_cmd_set-window-geometry:
+.. code-block:: bash
 
-set-window-geometry
--------------------
+    http://localhost:5010/?get-frames-per-sec
+
+The frame rate (in seconds) is returned in the "value" field of the response.
+An example response is given below.
+
+.. code-block:: javascript
+
+    { 
+        "command" : "get-frames-per-sec", 
+        "message" : "", 
+        "success" : true, 
+        "value"   : 149.5 
+    }
+
 
 .. _section_cmd_get-window-geometry:
 
 get-window-geometry
 -------------------
+Returns the current (GUI) camera window geometry - i.e. the x position, y position,  width and height in pixels.
+
+.. code-block:: bash
+
+    http://localhost:5010/?get-window-geometry
+
+The window geometry information is returned in the "value' field of the
+response. An example response is given below.
+
+.. code-block:: javascript
+
+    { 
+        "command" : "get-window-geometry", 
+        "message" : "", 
+        "success" : true, 
+        "value"   : { 
+            "height" : 479, 
+            "width"  : 581, 
+            "x"      : 1099, 
+            "y"      : 23 
+        } 
+    }
+
+
+
+
+.. _section_cmd_set-window-geometry:
+
+set-window-geometry
+-------------------
+Sets the geometry for the current camera window GUI. 
+
+.. code-block:: bash
+
+    http:://localhost:5010/?set-window-geometry=<window geometery json data>
+
+The window geometry data is specified in the json format as shown below
+
+.. code-block:: javascript
+
+    { 
+        "height" : 479, 
+        "width"  : 581, 
+        "x"      : 1099, 
+        "y"      : 23 
+    } 
+
+An example demonstrating how to set the window geometry is as follows
+
+.. code-block:: bash
+
+    http://localhost:5010/?set-window-geometry={"height":600,"width":600,"x":1000,"y":100} 
 
 .. _section_cmd_plugin-cmd:
 
 plugin-cmd
 ----------
+Run the specified plugin command TODO
 
 .. _section_cmd_set-camera-name:
 
-set-camera-name
-----------------
 
