@@ -215,51 +215,194 @@ logging during capture will return an error as follows:
     }
 
 
-
 .. _section_cmd_load-configuration:
 
 load-configuration
 ------------------
+Load and set the BIAS configuration from the file given as an argument.
+
+.. code-block:: bash
+
+    http://localhost:5010/?load-configuration=<json configuration file>
+
+Note, the camera must be connected for the command to be successful. An example
+of the command for a configuration file name "bias_config.json" located in
+"C:\Users\Will\Documents" is given below.
+
+.. code-block:: bash
+
+    http://localhost:5010/?load-configuration=C:\Users\Will\Documents\bias_config.json
 
 .. _section_cmd_save-configuration:
 
 save-configuration
 ------------------
+Save the current BIAS configuration to the specified file.
+
+.. code-block:: bash
+
+    http://localhost:5010/?save-configuration=<json configuration file>
+
+Note, the camera must be connected for the commmand to be successful. An
+example of the command for creating a configuration file named "my_config.json"
+in the "C:\Users\Will\Documents" directory is a given below.
+
+.. code-block:: bash
+
+    http://localhost:5010/?save-configuration=C:\Users\Will\Documents\my_config.json
 
 .. _section_cmd_close:
 
 close
 -----
+Closes the BIAS camera window (specified via port address). 
+
+.. code-block:: bash
+
+    http://localhost:5010/?close
+
+Note, the BIAS camera window cannot be closed using this command if image
+capture has been started.  
 
 .. _section_cmd_get-frame-count:
 
 get-frame-count
 ---------------
+Returns the current frame count from the associate BIAS camera window.
+
+.. code-block:: bash
+
+    http://localhost:5010/?get_frame-count
+
+The frame count is returned in the "value" field of the response. An example
+response is given below.
+
+.. code-block:: javascript
+
+    { "command" : "get-frame-count", "message" : "", "success" : true, "value"   : 209 }
 
 .. _section_cmd_get-camera-guid:
 
 get-camera-guid
 ---------------
 
+Returns the camera's GUID (Globally Unique Identifier). 
+
+.. code-block:: bash
+
+    http://localhost:5010/?get-camera-guid
+
+The GUID of the camera is returned in the "value" field of the response. An
+example response is given below.
+
+.. code-block:: javascript
+
+    { "command" : "get-camera-guid", "message" : "", "success" : true, "value" : "305300014103fc" }
+
+
 .. _section_cmd_get-status:
 
 get-status
 ----------
+Returns status information for the BIAS application in JSON format.
+
+.. code-block:: bash
+
+    http://localhost:5010/?get-status
+
+The status information is returned in the "value" field of the reponse. The
+information includes following fields:
+
+* capturing   - true/false indicating  whether or not the camera is connected, 
+* connected   - true/false indicating whether or not the camera is currently capturing images, 
+* frameCount  - integer giving the current frame count, 
+* framePerSec - double specifing the current frame rate,
+* logging     - true/false indicating whether or not logging is enabled
+* timeStamp   - the current time stamp.
+
+An example response is given below.
+
+.. code-block:: javascript
+
+    { 
+        "command" : "get-status", 
+        "message" : "", 
+        "success" : true, 
+        "value"   : { 
+            "capturing"    : true, 
+            "connected"    : true, 
+            "frameCount"   : 91, 
+            "framesPerSec" : 149.0, 
+            "logging"      : false, 
+            "timeStamp"    : 4.58 
+        } 
+    }
+ 
 
 .. _section_cmd_set-video-file:
 
 set-video-file
 --------------
+Sets the current video file name for logging.
+
+.. code-block:: bash
+    
+    http://localhost:5010/?set-video-file=<video file name>
+
+Note, video file name must specify the full path to the desired video file. The
+target directory must exist. Any file extension is ignored - BIAS will set this
+based on the current video file format. For example, setting the video file to
+"my_video_file" located in "C:\Users\Will\Documents" can be accomplished as
+follows:
+
+.. code-block:: bash
+
+    http://localhost:5010/?set-video-file=C:\Users\Will\Documents\my_video_file
+    
 
 .. _section_cmd_get-video-file:
 
 get-video-file
 --------------
+Returns the full path to the currently specified video file.
+
+.. code-block:: bash
+
+    http://localhost:5010/?get-video-file
+
+The video file name is returned in the value field of the response. An example
+response is given below:
+
+.. code-block:: javascript
+
+    { 
+        "command" : "get-video-file", 
+        "message" : "", 
+        "success" : true, 
+        "value" : "C:/Users/Will/Documents/my_video_file.ufmf" 
+    }
 
 .. _section_cmd_get-time-stamp:
 
 get-time-stamp
 --------------
+Returns the current image capture time stamp.
+
+.. code-block:: bash
+
+    http://localhost:5010/?get-time-stamp
+
+The time stamp is return in the value field of the response and in is units
+(sec). An example response is given below. 
+
+.. code-block:: javascript
+
+    { 
+        "command" : "get-time-stamp", 
+        "message" : "", 
+        "success" : true, 
+        "value"   : 8.3555820000000000647 
+    } 
 
 .. _section_cmd_get-frames-per-sec:
 

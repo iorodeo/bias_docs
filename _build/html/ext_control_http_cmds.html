@@ -217,30 +217,144 @@ logging during capture will return an error as follows:</p>
 </div>
 <div class="section" id="load-configuration">
 <span id="section-cmd-load-configuration"></span><h3>load-configuration<a class="headerlink" href="#load-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Load and set the BIAS configuration from the file given as an argument.</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?load-configuration<span class="o">=</span>&lt;json configuration file&gt;
+</pre></div>
+</div>
+<p>Note, the camera must be connected for the command to be successful. An example
+of the command for a configuration file name &#8220;bias_config.json&#8221; located in
+&#8220;C:UsersWillDocuments&#8221; is given below.</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?load-configuration<span class="o">=</span>C:<span class="se">\U</span>sers<span class="se">\W</span>ill<span class="se">\D</span>ocuments<span class="se">\b</span>ias_config.json
+</pre></div>
+</div>
 </div>
 <div class="section" id="save-configuration">
 <span id="section-cmd-save-configuration"></span><h3>save-configuration<a class="headerlink" href="#save-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Save the current BIAS configuration to the specified file.</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?save-configuration<span class="o">=</span>&lt;json configuration file&gt;
+</pre></div>
+</div>
+<p>Note, the camera must be connected for the commmand to be successful. An
+example of the command for creating a configuration file named &#8220;my_config.json&#8221;
+in the &#8220;C:UsersWillDocuments&#8221; directory is a given below.</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?save-configuration<span class="o">=</span>C:<span class="se">\U</span>sers<span class="se">\W</span>ill<span class="se">\D</span>ocuments<span class="se">\m</span>y_config.json
+</pre></div>
+</div>
 </div>
 <div class="section" id="close">
 <span id="section-cmd-close"></span><h3>close<a class="headerlink" href="#close" title="Permalink to this headline">¶</a></h3>
+<p>Closes the BIAS camera window (specified via port address).</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?close
+</pre></div>
+</div>
+<p>Note, the BIAS camera window cannot be closed using this command if image
+capture has been started.</p>
 </div>
 <div class="section" id="get-frame-count">
 <span id="section-cmd-get-frame-count"></span><h3>get-frame-count<a class="headerlink" href="#get-frame-count" title="Permalink to this headline">¶</a></h3>
+<p>Returns the current frame count from the associate BIAS camera window.</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get_frame-count
+</pre></div>
+</div>
+<p>The frame count is returned in the &#8220;value&#8221; field of the response. An example
+response is given below.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span> <span class="s2">&quot;command&quot;</span> <span class="o">:</span> <span class="s2">&quot;get-frame-count&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;success&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span>   <span class="o">:</span> <span class="mi">209</span> <span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="get-camera-guid">
 <span id="section-cmd-get-camera-guid"></span><h3>get-camera-guid<a class="headerlink" href="#get-camera-guid" title="Permalink to this headline">¶</a></h3>
+<p>Returns the camera&#8217;s GUID (Globally Unique Identifier).</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get-camera-guid
+</pre></div>
+</div>
+<p>The GUID of the camera is returned in the &#8220;value&#8221; field of the response. An
+example response is given below.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span> <span class="s2">&quot;command&quot;</span> <span class="o">:</span> <span class="s2">&quot;get-camera-guid&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;success&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="s2">&quot;305300014103fc&quot;</span> <span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="get-status">
 <span id="section-cmd-get-status"></span><h3>get-status<a class="headerlink" href="#get-status" title="Permalink to this headline">¶</a></h3>
+<p>Returns status information for the BIAS application in JSON format.</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get-status
+</pre></div>
+</div>
+<p>The status information is returned in the &#8220;value&#8221; field of the reponse. The
+information includes following fields:</p>
+<ul class="simple">
+<li>capturing   - true/false indicating  whether or not the camera is connected,</li>
+<li>connected   - true/false indicating whether or not the camera is currently capturing images,</li>
+<li>frameCount  - integer giving the current frame count,</li>
+<li>framePerSec - double specifing the current frame rate,</li>
+<li>logging     - true/false indicating whether or not logging is enabled</li>
+<li>timeStamp   - the current time stamp.</li>
+</ul>
+<p>An example response is given below.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;command&quot;</span> <span class="o">:</span> <span class="s2">&quot;get-status&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;message&quot;</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;success&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;value&quot;</span>   <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;capturing&quot;</span>    <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">&quot;connected&quot;</span>    <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">&quot;frameCount&quot;</span>   <span class="o">:</span> <span class="mi">91</span><span class="p">,</span>
+        <span class="s2">&quot;framesPerSec&quot;</span> <span class="o">:</span> <span class="mf">149.0</span><span class="p">,</span>
+        <span class="s2">&quot;logging&quot;</span>      <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">&quot;timeStamp&quot;</span>    <span class="o">:</span> <span class="mf">4.58</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="set-video-file">
 <span id="section-cmd-set-video-file"></span><h3>set-video-file<a class="headerlink" href="#set-video-file" title="Permalink to this headline">¶</a></h3>
+<p>Sets the current video file name for logging.</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?set-video-file<span class="o">=</span>&lt;video file name&gt;
+</pre></div>
+</div>
+<p>Note, video file name must specify the full path to the desired video file. The
+target directory must exist. Any file extension is ignored - BIAS will set this
+based on the current video file format. For example, setting the video file to
+&#8220;my_video_file&#8221; located in &#8220;C:UsersWillDocuments&#8221; can be accomplished as
+follows:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?set-video-file<span class="o">=</span>C:<span class="se">\U</span>sers<span class="se">\W</span>ill<span class="se">\D</span>ocuments<span class="se">\m</span>y_video_file
+</pre></div>
+</div>
 </div>
 <div class="section" id="get-video-file">
 <span id="section-cmd-get-video-file"></span><h3>get-video-file<a class="headerlink" href="#get-video-file" title="Permalink to this headline">¶</a></h3>
+<p>Returns the full path to the currently specified video file.</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get-video-file
+</pre></div>
+</div>
+<p>The video file name is returned in the value field of the response. An example
+response is given below:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;command&quot;</span> <span class="o">:</span> <span class="s2">&quot;get-video-file&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;message&quot;</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;success&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="s2">&quot;C:/Users/Will/Documents/my_video_file.ufmf&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="get-time-stamp">
 <span id="section-cmd-get-time-stamp"></span><h3>get-time-stamp<a class="headerlink" href="#get-time-stamp" title="Permalink to this headline">¶</a></h3>
+<p>Returns the current image capture time stamp.</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get-time-stamp
+</pre></div>
+</div>
+<p>The time stamp is return in the value field of the response and in is units
+(sec). An example response is given below.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;command&quot;</span> <span class="o">:</span> <span class="s2">&quot;get-time-stamp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;message&quot;</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;success&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;value&quot;</span>   <span class="o">:</span> <span class="mf">8.3555820000000000647</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="get-frames-per-sec">
 <span id="section-cmd-get-frames-per-sec"></span><h3>get-frames-per-sec<a class="headerlink" href="#get-frames-per-sec" title="Permalink to this headline">¶</a></h3>
