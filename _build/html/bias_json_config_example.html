@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>BIAS JSON configuration &mdash; BIAS 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="BIAS 0.1 documentation" href="index.html" /> 
+  </head>
+  <body>
+      <div class="header"><a href="http://www.iorodeo.com"  target="_blank">
+  <img class="rightlogo" src="_static/iorodeo_logo.png" alt="Logo"/>
+  </a><h1 class="heading"><a href="index.html">
+  <span>BIAS 0.1 documentation</span></a></h1>
+<h2 class="heading"><span>BIAS JSON configuration</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="bias-json-configuration">
+<span id="section-bias-json-config"></span><h1>BIAS JSON configuration<a class="headerlink" href="#bias-json-configuration" title="Permalink to this headline">¶</a></h1>
+<p>BIAS&#8217; configuration data (GUI + camera settings) can be serialized via the</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;camera&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;format7Settings&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;mode&quot;</span> <span class="o">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pixelFormat&quot;</span> <span class="o">:</span> <span class="s2">&quot;RAW8&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;roi&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;height&quot;</span> <span class="o">:</span> <span class="mi">1024</span><span class="p">,</span>
+                <span class="s2">&quot;offsetX&quot;</span> <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;offsetY&quot;</span> <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;width&quot;</span> <span class="o">:</span> <span class="mi">1280</span> 
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;frameRate&quot;</span> <span class="o">:</span> <span class="s2">&quot;Format7&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;guid&quot;</span> <span class="o">:</span> <span class="s2">&quot;50218ef09467a47866390a571aff7677&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;model&quot;</span> <span class="o">:</span> <span class="s2">&quot;Flea3 FL3-U3-13Y3M&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;properties&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;autoExposure&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">1.32196044921875</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">480</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;brightness&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">16</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;focus&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">0</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;frameRate&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">150.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">480</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;gain&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">18.06179046630859375</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">275</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;gamma&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">1024</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;hue&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">0</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;iris&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">0</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;pan&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">0</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;saturation&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">0</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;sharpness&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">1024</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;shutter&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">3.3347010612487792969</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">522</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;temperature&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">3.2047250270843505859</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">3205</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;tilt&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">0</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;triggerDelay&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">0</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;triggerMode&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">0</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;whiteBalance&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;valueBlue&quot;</span> <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;valueRed&quot;</span> <span class="o">:</span> <span class="mi">0</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;zoom&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;absoluteControl&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;absoluteValue&quot;</span> <span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s2">&quot;autoActive&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;onePush&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;present&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">0</span> 
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;triggerType&quot;</span> <span class="o">:</span> <span class="s2">&quot;Internal&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;vendor&quot;</span> <span class="o">:</span> <span class="s2">&quot;Point Grey Research&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;videoMode&quot;</span> <span class="o">:</span> <span class="s2">&quot;Format7&quot;</span> 
+    <span class="p">},</span>
+    <span class="s2">&quot;configuration&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;directory&quot;</span> <span class="o">:</span> <span class="s2">&quot;C:/Users/Will/Documents&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fileName&quot;</span> <span class="o">:</span> <span class="s2">&quot;bias_config&quot;</span> 
+    <span class="p">},</span>
+    <span class="s2">&quot;display&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;colorMap&quot;</span> <span class="o">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;orientation&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;flipHorizontal&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">&quot;flipVertical&quot;</span> <span class="o">:</span> <span class="kc">false</span> 
+        <span class="p">},</span>
+        <span class="s2">&quot;rotation&quot;</span> <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;updateFrequency&quot;</span> <span class="o">:</span> <span class="mf">15.0</span> 
+    <span class="p">},</span>
+    <span class="s2">&quot;logging&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;autoNamingOptions&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;cameraIdentifier&quot;</span> <span class="o">:</span> <span class="s2">&quot;CameraNumber&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;includeCameraIdentifier&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">&quot;includeTimeAndDate&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">&quot;includeVersionNumber&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">&quot;timeAndDateFormat&quot;</span> <span class="o">:</span> <span class="s2">&quot;&#39;date&#39;_yyyy_MM_dd_&#39;time&#39;_hh_mm_ss&quot;</span> 
+        <span class="p">},</span>
+        <span class="s2">&quot;directory&quot;</span> <span class="o">:</span> <span class="s2">&quot;C:/Users/Will/Videos&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;enabled&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">&quot;fileName&quot;</span> <span class="o">:</span> <span class="s2">&quot;bias_video&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;format&quot;</span> <span class="o">:</span> <span class="s2">&quot;ufmf&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;settings&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;avi&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;codec&quot;</span> <span class="o">:</span> <span class="s2">&quot;XVID&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;frameSkip&quot;</span> <span class="o">:</span> <span class="mi">1</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;bmp&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;frameSkip&quot;</span> <span class="o">:</span> <span class="mi">1</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;fmf&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;frameSkip&quot;</span> <span class="o">:</span> <span class="mi">1</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;ufmf&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;backgroundThreshold&quot;</span> <span class="o">:</span> <span class="mi">40</span><span class="p">,</span>
+                <span class="s2">&quot;boxLength&quot;</span> <span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+                <span class="s2">&quot;compressionThreads&quot;</span> <span class="o">:</span> <span class="mi">15</span><span class="p">,</span>
+                <span class="s2">&quot;dilate&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;on&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="s2">&quot;windowSize&quot;</span> <span class="o">:</span> <span class="mi">2</span> 
+                <span class="p">},</span>
+                <span class="s2">&quot;frameSkip&quot;</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">&quot;medianUpdateCount&quot;</span> <span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+                <span class="s2">&quot;medianUpdateInterval&quot;</span> <span class="o">:</span> <span class="mi">50</span> 
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;plugin&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;config&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;detectBox&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;color&quot;</span> <span class="o">:</span> <span class="s2">&quot;ff0000&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;height&quot;</span> <span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+                <span class="s2">&quot;width&quot;</span> <span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+                <span class="s2">&quot;xPos&quot;</span> <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;yPos&quot;</span> <span class="o">:</span> <span class="mi">0</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;device&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;autoConnect&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;portName&quot;</span> <span class="o">:</span> <span class="s2">&quot;ttyUSB0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;pulseDuration&quot;</span> <span class="o">:</span> <span class="mf">0.2000000000000000111</span> 
+            <span class="p">},</span>
+            <span class="s2">&quot;trigger&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;armedState&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;enabled&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;medianFilter&quot;</span> <span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="s2">&quot;threshold&quot;</span> <span class="o">:</span> <span class="mi">100</span> 
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;grabDetector&quot;</span> 
+    <span class="p">},</span>
+    <span class="s2">&quot;server&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;enabled&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">&quot;port&quot;</span> <span class="o">:</span> <span class="mi">5010</span> 
+    <span class="p">},</span>
+    <span class="s2">&quot;timer&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;enabled&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">&quot;settings&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;duration&quot;</span> <span class="o">:</span> <span class="mi">30</span> 
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Will Dickson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

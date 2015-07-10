@@ -1,0 +1,10 @@
+.. _section_bias_json_config:
+
+***********************
+BIAS JSON configuration 
+***********************
+
+BIAS' configuration data (GUI + camera settings) can be serialized via the 
+
+.. literalinclude:: _static/bias_config.json
+   :language: javascript

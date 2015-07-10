@@ -11,6 +11,7 @@ Contents
    :maxdepth: 1
 
    ext_control_http_cmds
+   bias_json_config
    build_environ_setup_win
 
 
