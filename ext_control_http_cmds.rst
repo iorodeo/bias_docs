@@ -1,5 +1,5 @@
 *********************************************
-Extrenal Control via HTTP Commands
+External Control HTTP Commands
 *********************************************
 
 BIAS can be controlled via external HTTP commands when the external control
