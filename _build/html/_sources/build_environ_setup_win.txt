@@ -163,7 +163,7 @@ will fail.
 
 When finished remove git from windows PATH.  
 
-Open a shell (cmd or Poweershell) for building Qt. Set the  QT_SRC_DIR
+Open a shell (cmd or Powershell) for building Qt. Set the  QT_SRC_DIR
 environment variable to the location of the Qt source files and QTMAKESPEC to
 the appropriate spec file location.  For example setting the environment
 variables can be done in Powershell as follows.
@@ -174,13 +174,13 @@ variables can be done in Powershell as follows.
     $Env:QMAKESPEC = "$Env:QT_SRC_DIR\qtbase\mkspecs\win32-g++"
 
 
-Next, from within the qt5 source directory Configure Qt as follows:
+Next, from within the qt5 source directory configure Qt as follows:
 
 .. code-block:: none
 
     ./configure  -developer-build  -opensource  -platform win32-g++ -c++11  -opengl desktop -openssl -I <path to openssl install>\include -L <apth to openssl install>\lib
 
-Run mingw32-make to build and install (Do we need to do this for developer build??).
+Run mingw32-make to build and install. 
 
 .. code-block:: none
 
