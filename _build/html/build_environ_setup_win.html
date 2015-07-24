@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="BIAS 0.1 documentation" href="index.html" />
-    <link rel="prev" title="Extrenal Control via http Commands" href="ext_control_http_cmds.html" /> 
+    <link rel="prev" title="BIAS JSON configuration" href="bias_json_config.html" /> 
   </head>
   <body>
       <div class="header"><a href="http://www.iorodeo.com"  target="_blank">
@@ -36,7 +36,7 @@
       <div class="topnav">
       
         <p>
-        «&#160;&#160;<a href="ext_control_http_cmds.html">Extrenal Control via http Commands</a>
+        «&#160;&#160;<a href="bias_json_config.html">BIAS JSON configuration</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         </p>
@@ -119,17 +119,24 @@ c:\perl64\bin and  c:\perl64\site\bin.</p>
 <div class="section" id="download-and-install-openssl">
 <span id="section-win-install-openssl"></span><h2>Download and install Openssl<a class="headerlink" href="#download-and-install-openssl" title="Permalink to this headline">¶</a></h2>
 <p>Openssl can be downloaded from here here <a class="reference external" href="https://www.openssl.org/source/">https://www.openssl.org/source/</a> Note, some minor edits are required for building on a 64.</p>
-<ul class="simple">
-<li>In config, add options=&#8221;$options no-asm&#8221; into it (~15th line from bottom).</li>
-<li>In Makefile change -march=i486 to -march=x86-64</li>
-</ul>
+<p>First edit config and  add options=&#8221;$options no-asm&#8221; into it (~15th line from bottom).</p>
 <p>Using MSYS run ./config as follows:</p>
 <div class="highlight-none"><div class="highlight"><pre>./config --prefix=&lt;openssl install directory&gt; --openssldir=&lt;openssl source directory&gt; no-asm
 </pre></div>
 </div>
-<p>Where &lt;openssl install directory&gt; and  &lt;openssl source directory&gt; are something like</p>
+<p>where &lt;openssl install directory&gt; and  &lt;openssl source directory&gt; are something like</p>
 <div class="highlight-none"><div class="highlight"><pre>&lt;openssl install directory&gt;  =  /c/Users/Will/work/openssl/openssl_install
 &lt;openssl source directory&gt;   =  /c/Users/Will/work/openssl/openssl_files
+</pre></div>
+</div>
+<p>Next edit the generated  Makefile and change -march=i486 to -march=x86-64.
+With openssl-1.0.1p I also need to edit the files md5test.c, rc5test.c and
+jpaketest.c in the test directory and change the line</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">dummytest</span><span class="p">.</span><span class="n">c</span>
+</pre></div>
+</div>
+<p>to</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">#include &quot;dummytest.c&quot;</span>
 </pre></div>
 </div>
 <p>Finally build and install - using MSYS.</p>
@@ -311,7 +318,7 @@ command</p>
       <div class="bottomnav">
       
         <p>
-        «&#160;&#160;<a href="ext_control_http_cmds.html">Extrenal Control via http Commands</a>
+        «&#160;&#160;<a href="bias_json_config.html">BIAS JSON configuration</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         </p>

@@ -93,8 +93,7 @@ Download and install Openssl
 
 Openssl can be downloaded from here here https://www.openssl.org/source/ Note, some minor edits are required for building on a 64.
 
-* In config, add options="$options no-asm" into it (~15th line from bottom).
-* In Makefile change -march=i486 to -march=x86-64
+First edit config and  add options="$options no-asm" into it (~15th line from bottom).
 
 Using MSYS run ./config as follows:
 
@@ -102,7 +101,7 @@ Using MSYS run ./config as follows:
 
     ./config --prefix=<openssl install directory> --openssldir=<openssl source directory> no-asm
 
-Where <openssl install directory> and  <openssl source directory> are something like
+where <openssl install directory> and  <openssl source directory> are something like
 
 .. code-block:: none
 
@@ -110,8 +109,22 @@ Where <openssl install directory> and  <openssl source directory> are something 
     <openssl source directory>   =  /c/Users/Will/work/openssl/openssl_files 
 
     
+Next edit the generated  Makefile and change -march=i486 to -march=x86-64.
+With openssl-1.0.1p I also need to edit the files md5test.c, rc5test.c and
+jpaketest.c in the test directory and change the line
 
-Finally build and install - using MSYS. 
+.. code-block:: c
+
+    dummytest.c
+
+to 
+
+.. code-block:: c
+
+    #include "dummytest.c"
+
+
+Finally build and install - using MSYS.  
 
 .. code-block:: none
 
