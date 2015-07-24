@@ -139,13 +139,13 @@ Finally build and install - using MSYS.
 Download, configure and build Qt
 ================================
 
-Bias currently uses qt version 5.3.2.  The repository can be download using git. 
+Bias currently uses qt version 5.3.2.  The repository can be download using git (from git bash). 
 
 .. code-block:: none
 
     git clone git://code.qt.io/qt/qt5.git
 
-Using git bash checkout the 5.3.2 branch. 
+Next, using git bash checkout the 5.3.2 branch. 
 
 .. code-block:: none
 
