@@ -143,7 +143,7 @@ Bias currently uses qt version 5.3.2.  The repository can be download using git.
 
 .. code-block:: none
 
-    git clone git://gitorious.org/qt/qt5.git qt5
+    git clone git://code.qt.io/qt/qt5.git
 
 Using git bash checkout the 5.3.2 branch. 
 
