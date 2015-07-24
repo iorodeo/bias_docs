@@ -110,7 +110,7 @@ where <openssl install directory> and  <openssl source directory> are something 
 
     
 Next edit the generated  Makefile and change -march=i486 to -march=x86-64.
-With openssl-1.0.1p I also need to edit the files md5test.c, rc5test.c and
+With openssl-1.0.1p I also needed to edit the files md5test.c, rc5test.c and
 jpaketest.c in the test directory and change the line
 
 .. code-block:: c
