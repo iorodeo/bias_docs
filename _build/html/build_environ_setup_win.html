@@ -157,10 +157,10 @@ mingw32-make.exe install
 </pre></div>
 </div>
 <p>Temporarily add git to the windows PATH. Make sure to add it after Perl. Then
-run the &#8220;init-repository&#8221; script to fetch the sub-repositories. This should be
-run from either a window cmd shell or Powershell as running it from git bash
-will fail.</p>
-<div class="highlight-none"><div class="highlight"><pre>perl init-repository -no-webkit
+from within the qt5 directory run the &#8220;init-repository&#8221; script to fetch the
+sub-repositories. This should be run from either a window cmd shell or
+Powershell as running it from git bash will fail.</p>
+<div class="highlight-none"><div class="highlight"><pre>perl ./init-repository -no-webkit
 </pre></div>
 </div>
 <p>When finished remove git from windows PATH.</p>

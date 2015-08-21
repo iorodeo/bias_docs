@@ -153,14 +153,14 @@ Next, using git bash checkout the 5.3.2 branch.
     git checkout 5.3.2
 
 Temporarily add git to the windows PATH. Make sure to add it after Perl. Then
-run the "init-repository" script to fetch the sub-repositories. This should be
-run from either a window cmd shell or Powershell as running it from git bash
-will fail.
+from within the qt5 directory run the "init-repository" script to fetch the
+sub-repositories. This should be run from either a window cmd shell or
+Powershell as running it from git bash will fail.
 
 
 .. code-block:: none
 
-    perl init-repository -no-webkit
+    perl ./init-repository -no-webkit
 
 When finished remove git from windows PATH.  
 
