@@ -91,7 +91,8 @@ c:\\perl64\\bin and  c:\\perl64\\site\\bin.
 Download and install Openssl
 ============================
 
-Openssl can be downloaded from here here https://www.openssl.org/source/ Note, some minor edits are required for building on a 64.
+Openssl can be downloaded from here here https://www.openssl.org/source/ Note,
+some minor edits are required for building on a 64bt windows.
 
 First edit config and  add options="$options no-asm" into it (~15th line from bottom).
 
@@ -128,8 +129,8 @@ Finally build and install - using MSYS.
 
 .. code-block:: none
 
-    ./mingw32-make.exe
-    ./mingw32-make.exe install
+    mingw32-make.exe
+    mingw32-make.exe install
 
 
 

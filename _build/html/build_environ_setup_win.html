@@ -118,7 +118,8 @@ c:\perl64\bin and  c:\perl64\site\bin.</p>
 </div>
 <div class="section" id="download-and-install-openssl">
 <span id="section-win-install-openssl"></span><h2>Download and install Openssl<a class="headerlink" href="#download-and-install-openssl" title="Permalink to this headline">¶</a></h2>
-<p>Openssl can be downloaded from here here <a class="reference external" href="https://www.openssl.org/source/">https://www.openssl.org/source/</a> Note, some minor edits are required for building on a 64.</p>
+<p>Openssl can be downloaded from here here <a class="reference external" href="https://www.openssl.org/source/">https://www.openssl.org/source/</a> Note,
+some minor edits are required for building on a 64bt windows.</p>
 <p>First edit config and  add options=&#8221;$options no-asm&#8221; into it (~15th line from bottom).</p>
 <p>Using MSYS run ./config as follows:</p>
 <div class="highlight-none"><div class="highlight"><pre>./config --prefix=&lt;openssl install directory&gt; --openssldir=&lt;openssl source directory&gt; no-asm
@@ -140,8 +141,8 @@ jpaketest.c in the test directory and change the line</p>
 </pre></div>
 </div>
 <p>Finally build and install - using MSYS.</p>
-<div class="highlight-none"><div class="highlight"><pre>./mingw32-make.exe
-./mingw32-make.exe install
+<div class="highlight-none"><div class="highlight"><pre>mingw32-make.exe
+mingw32-make.exe install
 </pre></div>
 </div>
 </div>
