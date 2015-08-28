@@ -283,7 +283,8 @@ In the configuration tool perform the following steps
   * Re-run configure 
   * Run generate
 
-Next, exit the configuration tool and  build open by running the following command
+Next, exit the configuration tool, cd to the build directory selected above,
+and  build  opencv by running the following command
 
 .. code-block:: bash
 
