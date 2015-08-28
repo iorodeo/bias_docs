@@ -61,7 +61,7 @@ the second menu item - e.g. Port(5010).</p>
 <div class="section" id="basic-command-structure">
 <h2>Basic Command Structure<a class="headerlink" href="#basic-command-structure" title="Permalink to this headline">¶</a></h2>
 <p>Commands are sent using http GET request as follows:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?&lt;commandName&gt;<span class="o">=</span>&lt;commandArgs&gt;
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?&lt;commandName&gt;=&lt;commandArgs&gt;
 </pre></div>
 </div>
 <p>where &#8220;commandName&#8221; is the name of the and &#8220;commandArg&#8221; is the command argument
@@ -70,7 +70,7 @@ address and the port is assumed to be 5010. The local computers IP address may
 used in place of &#8220;localhost&#8221;.</p>
 <p>As an example consider the &#8220;stop-capture&#8221; command which instructs BIAS to stop
 capturing images from the camera. This command can be issued as follows:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?connect
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?connect
 </pre></div>
 </div>
 <p>In response to each command BIAS will return a JSON object containing the name
@@ -87,8 +87,8 @@ successful &#8220;set-video-file&#8221; command would be as follows:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="list-of-commands">
-<h2>List of Commands<a class="headerlink" href="#list-of-commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bias-commands">
+<h2>BIAS Commands<a class="headerlink" href="#bias-commands" title="Permalink to this headline">¶</a></h2>
 <p>This list of commands accepted by BIAS is as follows:
 <a class="reference internal" href="build_environ_setup_win.html#section-win-install-gcc"><em>Download and install gcc</em></a></p>
 <ul class="simple">
@@ -118,7 +118,7 @@ successful &#8220;set-video-file&#8221; command would be as follows:</p>
 <span id="section-cmd-connect"></span><h3>connect<a class="headerlink" href="#connect" title="Permalink to this headline">¶</a></h3>
 <p>Connect to the camera which is associated with the given BIAS camera window
 (specified by port address).</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?connect
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?connect
 </pre></div>
 </div>
 </div>
@@ -126,7 +126,7 @@ successful &#8220;set-video-file&#8221; command would be as follows:</p>
 <span id="section-cmd-disconnect"></span><h3>disconnect<a class="headerlink" href="#disconnect" title="Permalink to this headline">¶</a></h3>
 <p>Disconnect from the camera which is associated with the given BIAS camera
 (specified by port address).</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?disconnect
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?disconnect
 </pre></div>
 </div>
 </div>
@@ -134,7 +134,7 @@ successful &#8220;set-video-file&#8221; command would be as follows:</p>
 <span id="section-cmd-start-capture"></span><h3>start-capture<a class="headerlink" href="#start-capture" title="Permalink to this headline">¶</a></h3>
 <p>Starts image capture on the associated camera. Note, the camera must be
 connected for the command to be successful.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?start-capture
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?start-capture
 </pre></div>
 </div>
 <p>Note, the current connection status of the camera can be queried using
@@ -143,14 +143,14 @@ connected for the command to be successful.</p>
 <div class="section" id="stop-capture">
 <span id="section-cmd-stop-capture"></span><h3>stop-capture<a class="headerlink" href="#stop-capture" title="Permalink to this headline">¶</a></h3>
 <p>Stops image capture on the associated camera.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?stop-capture
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?stop-capture
 </pre></div>
 </div>
 </div>
 <div class="section" id="get-configuration">
 <span id="section-cmd-get-configuration"></span><h3>get-configuration<a class="headerlink" href="#get-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Returns the current BIAS configuration in the json format (all GUI and camera settings).</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get-configuration
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?get-configuration
 </pre></div>
 </div>
 <p>An example of the typical data returned by this command can be found here
@@ -162,7 +162,7 @@ this command to be successful.</p>
 <p>Sets the configuration of the associated GUI window and camera (specified by
 port address) to that given by the json configuration provided in the command
 argument.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?set-configuration<span class="o">=</span>&lt;json configuration object&gt;
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?set-configuration=&lt;json configuration object&gt;
 </pre></div>
 </div>
 <p>Note, the camera must be connected for this command to be successful. In
@@ -177,7 +177,7 @@ FL3-U3-13Y3M camera is shown  below.</p>
 <span id="section-cmd-enable-logging"></span><h3>enable-logging<a class="headerlink" href="#enable-logging" title="Permalink to this headline">¶</a></h3>
 <p>Enable logging of video data to data file. This command is equivalent to
 checking the &#8220;Logging -&gt; enabled&#8221; checkbox.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?enable-logging
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?enable-logging
 </pre></div>
 </div>
 <p>Note, logging cannot be enabled during image capture. In order to enable
@@ -198,7 +198,7 @@ return an error as follows:</p>
 <span id="section-cmd-disable-logging"></span><h3>disable-logging<a class="headerlink" href="#disable-logging" title="Permalink to this headline">¶</a></h3>
 <p>Disable logging of video data. This command is equivalent to unchecking the
 &#8220;Logging -&gt; enabled&#8221; checkbox.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?disable-logging
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?disable-logging
 </pre></div>
 </div>
 <p>Note, logging cannot be disabled if image capture has been started. In order to
@@ -217,33 +217,33 @@ logging during capture will return an error as follows:</p>
 <div class="section" id="load-configuration">
 <span id="section-cmd-load-configuration"></span><h3>load-configuration<a class="headerlink" href="#load-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Load and set the BIAS configuration from the file given as an argument.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?load-configuration<span class="o">=</span>&lt;json configuration file&gt;
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?load-configuration=&lt;json configuration file&gt;
 </pre></div>
 </div>
 <p>Note, the camera must be connected for the command to be successful. An example
 of the command for a configuration file name &#8220;bias_config.json&#8221; located in
 &#8220;C:UsersWillDocuments&#8221; is given below.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?load-configuration<span class="o">=</span>C:<span class="se">\U</span>sers<span class="se">\W</span>ill<span class="se">\D</span>ocuments<span class="se">\b</span>ias_config.json
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?load-configuration=C:\Users\Will\Documents\bias_config.json
 </pre></div>
 </div>
 </div>
 <div class="section" id="save-configuration">
 <span id="section-cmd-save-configuration"></span><h3>save-configuration<a class="headerlink" href="#save-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Save the current BIAS configuration to the specified file.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?save-configuration<span class="o">=</span>&lt;json configuration file&gt;
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?save-configuration=&lt;json configuration file&gt;
 </pre></div>
 </div>
 <p>Note, the camera must be connected for the command to be successful. An
 example of the command for creating a configuration file named &#8220;my_config.json&#8221;
 in the &#8220;C:UsersWillDocuments&#8221; directory is a given below.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?save-configuration<span class="o">=</span>C:<span class="se">\U</span>sers<span class="se">\W</span>ill<span class="se">\D</span>ocuments<span class="se">\m</span>y_config.json
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?save-configuration=C:\Users\Will\Documents\my_config.json
 </pre></div>
 </div>
 </div>
 <div class="section" id="close">
 <span id="section-cmd-close"></span><h3>close<a class="headerlink" href="#close" title="Permalink to this headline">¶</a></h3>
 <p>Closes the BIAS camera window (specified via port address).</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?close
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?close
 </pre></div>
 </div>
 <p>Note, the BIAS camera window cannot be closed using this command if image
@@ -252,7 +252,7 @@ capture has been started.</p>
 <div class="section" id="get-frame-count">
 <span id="section-cmd-get-frame-count"></span><h3>get-frame-count<a class="headerlink" href="#get-frame-count" title="Permalink to this headline">¶</a></h3>
 <p>Returns the current frame count from the associate BIAS camera window.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get_frame-count
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?get_frame-count
 </pre></div>
 </div>
 <p>The frame count is returned in the &#8220;value&#8221; field of the response. An example
@@ -264,7 +264,7 @@ response is given below.</p>
 <div class="section" id="get-camera-guid">
 <span id="section-cmd-get-camera-guid"></span><h3>get-camera-guid<a class="headerlink" href="#get-camera-guid" title="Permalink to this headline">¶</a></h3>
 <p>Returns the camera&#8217;s GUID (Globally Unique Identifier).</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get-camera-guid
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?get-camera-guid
 </pre></div>
 </div>
 <p>The GUID of the camera is returned in the &#8220;value&#8221; field of the response. An
@@ -276,7 +276,7 @@ example response is given below.</p>
 <div class="section" id="get-status">
 <span id="section-cmd-get-status"></span><h3>get-status<a class="headerlink" href="#get-status" title="Permalink to this headline">¶</a></h3>
 <p>Returns status information for the BIAS application in JSON format.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get-status
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?get-status
 </pre></div>
 </div>
 <p>The status information is returned in the &#8220;value&#8221; field of the response. The
@@ -309,7 +309,7 @@ information includes following fields:</p>
 <div class="section" id="set-video-file">
 <span id="section-cmd-set-video-file"></span><h3>set-video-file<a class="headerlink" href="#set-video-file" title="Permalink to this headline">¶</a></h3>
 <p>Sets the current video file name for logging.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?set-video-file<span class="o">=</span>&lt;video file name&gt;
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?set-video-file=&lt;video file name&gt;
 </pre></div>
 </div>
 <p>Note, video file name must specify the full path to the desired video file. The
@@ -317,14 +317,14 @@ target directory must exist. Any file extension is ignored - BIAS will set this
 based on the current video file format. For example, setting the video file to
 &#8220;my_video_file&#8221; located in &#8220;C:UsersWillDocuments&#8221; can be accomplished as
 follows:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?set-video-file<span class="o">=</span>C:<span class="se">\U</span>sers<span class="se">\W</span>ill<span class="se">\D</span>ocuments<span class="se">\m</span>y_video_file
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?set-video-file=C:\Users\Will\Documents\my_video_file
 </pre></div>
 </div>
 </div>
 <div class="section" id="get-video-file">
 <span id="section-cmd-get-video-file"></span><h3>get-video-file<a class="headerlink" href="#get-video-file" title="Permalink to this headline">¶</a></h3>
 <p>Returns the full path to the currently specified video file.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get-video-file
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?get-video-file
 </pre></div>
 </div>
 <p>The video file name is returned in the value field of the response. An example
@@ -341,7 +341,7 @@ response is given below:</p>
 <div class="section" id="get-time-stamp">
 <span id="section-cmd-get-time-stamp"></span><h3>get-time-stamp<a class="headerlink" href="#get-time-stamp" title="Permalink to this headline">¶</a></h3>
 <p>Returns the current image capture time stamp.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get-time-stamp
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?get-time-stamp
 </pre></div>
 </div>
 <p>The time stamp is return in the value field of the response and in is units
@@ -358,7 +358,7 @@ response is given below:</p>
 <div class="section" id="get-frames-per-sec">
 <span id="section-cmd-get-frames-per-sec"></span><h3>get-frames-per-sec<a class="headerlink" href="#get-frames-per-sec" title="Permalink to this headline">¶</a></h3>
 <p>Returns the  (measured) frame rate for the current capture (zero otherwise).</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get-frames-per-sec
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?get-frames-per-sec
 </pre></div>
 </div>
 <p>The frame rate (in seconds) is returned in the &#8220;value&#8221; field of the response.
@@ -375,7 +375,7 @@ An example response is given below.</p>
 <div class="section" id="get-window-geometry">
 <span id="section-cmd-get-window-geometry"></span><h3>get-window-geometry<a class="headerlink" href="#get-window-geometry" title="Permalink to this headline">¶</a></h3>
 <p>Returns the current (GUI) camera window geometry - i.e. the x position, y position,  width and height in pixels.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?get-window-geometry
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?get-window-geometry
 </pre></div>
 </div>
 <p>The window geometry information is returned in the &#8220;value&#8217; field of the
@@ -397,7 +397,7 @@ response. An example response is given below.</p>
 <div class="section" id="set-window-geometry">
 <span id="section-cmd-set-window-geometry"></span><h3>set-window-geometry<a class="headerlink" href="#set-window-geometry" title="Permalink to this headline">¶</a></h3>
 <p>Sets the geometry for the current camera window GUI.</p>
-<div class="highlight-bash"><div class="highlight"><pre>http:://localhost:5010/?set-window-geometry<span class="o">=</span>&lt;window geometery json data&gt;
+<div class="highlight-none"><div class="highlight"><pre>http:://localhost:5010/?set-window-geometry=&lt;window geometery json data&gt;
 </pre></div>
 </div>
 <p>The window geometry data is specified in the json format as shown below</p>
@@ -410,14 +410,82 @@ response. An example response is given below.</p>
 </pre></div>
 </div>
 <p>An example demonstrating how to set the window geometry is as follows</p>
-<div class="highlight-bash"><div class="highlight"><pre>http://localhost:5010/?set-window-geometry<span class="o">={</span><span class="s2">&quot;height&quot;</span>:600,<span class="s2">&quot;width&quot;</span>:600,<span class="s2">&quot;x&quot;</span>:1000,<span class="s2">&quot;y&quot;</span>:100<span class="o">}</span>
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?set-window-geometry={&quot;height&quot;:600,&quot;width&quot;:600,&quot;x&quot;:1000,&quot;y&quot;:100}
 </pre></div>
 </div>
 </div>
 <div class="section" id="plugin-cmd">
 <span id="section-cmd-plugin-cmd"></span><h3>plugin-cmd<a class="headerlink" href="#plugin-cmd" title="Permalink to this headline">¶</a></h3>
-<p>Run the specified plugin command TODO</p>
-<span class="target" id="section-cmd-set-camera-name"></span></div>
+<p>Runs a command specific to a BIAS plugin.  For example</p>
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?plugin-cmd={&quot;plugin&quot;:&lt;plugin name&gt;,&quot;cmd&quot;: &lt;command name&gt;, &lt;optional cmd args&gt;}}
+</pre></div>
+</div>
+<p>The &lt;plugin name&gt;, &lt;command name&gt; and  &lt;optional arguments&gt; are specific to the
+given plugin. In general different plugins will different commands available.</p>
+</div>
+</div>
+<div class="section" id="grab-detector-plugin-commands">
+<span id="section-cmd-set-camera-name"></span><h2>Grab Detector Plugin Commands<a class="headerlink" href="#grab-detector-plugin-commands" title="Permalink to this headline">¶</a></h2>
+<p>The list of available commands for the grab detector plugin are given below.</p>
+<ul class="simple">
+<li><a class="reference internal" href="#section-plugin-cmd-grab-detector-connect"><em>connect</em></a></li>
+<li><a class="reference internal" href="#section-plugin-cmd-grab-detector-disconnect"><em>disconnect</em></a></li>
+<li><a class="reference internal" href="#section-plugin-cmd-grab-detector-reset"><em>reset</em></a></li>
+<li><a class="reference internal" href="#section-plugin-cmd-grab-detector-set-config"><em>set-config</em></a></li>
+</ul>
+<div class="section" id="section-plugin-cmd-grab-detector-connect">
+<span id="id1"></span><h3>connect<a class="headerlink" href="#section-plugin-cmd-grab-detector-connect" title="Permalink to this headline">¶</a></h3>
+<p>Connects the grab detector plugin to the trigger device hardware.</p>
+<div class="highlight-none"><div class="highlight"><pre>http::/localhost:5010?/plugin-cmd={&quot;plugin&quot;:&quot;grabDetector&quot;,&quot;cmd&quot;: &quot;connect&quot;}
+</pre></div>
+</div>
+</div>
+<div class="section" id="section-plugin-cmd-grab-detector-disconnect">
+<span id="id2"></span><h3>disconnect<a class="headerlink" href="#section-plugin-cmd-grab-detector-disconnect" title="Permalink to this headline">¶</a></h3>
+<p>Disconnects the grab detector plugin from the trigger device hardware.</p>
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010?/plugin-cmd={&quot;plugin&quot;:&quot;grabDetector&quot;,&quot;cmd&quot;:&quot;disconnect&quot;}
+</pre></div>
+</div>
+</div>
+<div class="section" id="reset">
+<span id="section-plugin-cmd-grab-detector-reset"></span><h3>reset<a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h3>
+<p>Resets (re-enables) the grab detector hardware trigger</p>
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010?/plugin-cmd={&quot;plugin&quot;:&quot;grabDetector&quot;,&quot;cmd&quot;:&quot;reset&quot;}
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-config">
+<span id="section-plugin-cmd-grab-detector-set-config"></span><h3>set-config<a class="headerlink" href="#set-config" title="Permalink to this headline">¶</a></h3>
+<p>Set the grab detector plugin&#8217;s configuration</p>
+<div class="highlight-none"><div class="highlight"><pre>http://localhost:5010/?plugin-cmd={&quot;plugin&quot;:&quot;grabDetector&quot;,&quot;cmd&quot;:&quot;set-config&quot;,&quot;config&quot;:&lt;config-json&gt;}
+</pre></div>
+</div>
+<p>where &lt;config-json&gt; is a JSON object containing the desired plugin configuration parameters. An example is
+given below:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;detectBox&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;color&quot;</span> <span class="o">:</span> <span class="s2">&quot;ff0000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;height&quot;</span> <span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;width&quot;</span> <span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;xPos&quot;</span> <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;yPos&quot;</span> <span class="o">:</span> <span class="mi">0</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;device&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;autoConnect&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">&quot;outputPin&quot;</span> <span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;portName&quot;</span> <span class="o">:</span> <span class="s2">&quot;ttyUSB0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pulseDuration&quot;</span> <span class="o">:</span> <span class="mf">0.02</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;trigger&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;armedState&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">&quot;enabled&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">&quot;medianFilter&quot;</span> <span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">&quot;threshold&quot;</span> <span class="o">:</span> <span class="mi">100</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

@@ -8,7 +8,7 @@ Contents
 ========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    ext_control_http_cmds
    bias_json_config

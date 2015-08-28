@@ -19,7 +19,7 @@ Basic Command Structure
 
 Commands are sent using http GET request as follows:
 
-.. code-block:: bash 
+.. code-block:: none 
 
    http://localhost:5010/?<commandName>=<commandArgs>
     
@@ -31,7 +31,7 @@ used in place of "localhost".
 As an example consider the "stop-capture" command which instructs BIAS to stop
 capturing images from the camera. This command can be issued as follows: 
 
-.. code-block:: bash
+.. code-block:: none 
 
     http://localhost:5010/?connect
 
@@ -50,8 +50,8 @@ successful "set-video-file" command would be as follows:
         "value" : "" 
     }
 
-List of Commands
-================
+BIAS Commands
+==============
 
 This list of commands accepted by BIAS is as follows:
 :ref:`section_win_install_gcc`
@@ -85,7 +85,7 @@ connect
 Connect to the camera which is associated with the given BIAS camera window
 (specified by port address).
 
-.. code-block:: bash 
+.. code-block:: none 
 
    http://localhost:5010/?connect
 
@@ -97,7 +97,7 @@ disconnect
 Disconnect from the camera which is associated with the given BIAS camera
 (specified by port address).
 
-.. code-block:: bash 
+.. code-block:: none 
 
    http://localhost:5010/?disconnect
 
@@ -109,7 +109,7 @@ start-capture
 Starts image capture on the associated camera. Note, the camera must be
 connected for the command to be successful. 
 
-.. code-block:: bash 
+.. code-block:: none 
 
    http://localhost:5010/?start-capture
 
@@ -122,7 +122,7 @@ stop-capture
 ------------
 Stops image capture on the associated camera. 
 
-.. code-block:: bash 
+.. code-block:: none 
 
    http://localhost:5010/?stop-capture
 
@@ -132,7 +132,7 @@ get-configuration
 -----------------
 Returns the current BIAS configuration in the json format (all GUI and camera settings).
 
-.. code-block:: bash 
+.. code-block:: none 
 
    http://localhost:5010/?get-configuration
 
@@ -149,7 +149,7 @@ Sets the configuration of the associated GUI window and camera (specified by
 port address) to that given by the json configuration provided in the command
 argument.
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?set-configuration=<json configuration object>
 
@@ -169,7 +169,7 @@ enable-logging
 Enable logging of video data to data file. This command is equivalent to
 checking the "Logging -> enabled" checkbox. 
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?enable-logging
 
@@ -195,7 +195,7 @@ disable-logging
 Disable logging of video data. This command is equivalent to unchecking the
 "Logging -> enabled" checkbox.
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?disable-logging
 
@@ -220,7 +220,7 @@ load-configuration
 ------------------
 Load and set the BIAS configuration from the file given as an argument.
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?load-configuration=<json configuration file>
 
@@ -228,7 +228,7 @@ Note, the camera must be connected for the command to be successful. An example
 of the command for a configuration file name "bias_config.json" located in
 "C:\Users\Will\Documents" is given below.
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?load-configuration=C:\Users\Will\Documents\bias_config.json
 
@@ -238,7 +238,7 @@ save-configuration
 ------------------
 Save the current BIAS configuration to the specified file.
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?save-configuration=<json configuration file>
 
@@ -246,7 +246,7 @@ Note, the camera must be connected for the command to be successful. An
 example of the command for creating a configuration file named "my_config.json"
 in the "C:\Users\Will\Documents" directory is a given below.
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?save-configuration=C:\Users\Will\Documents\my_config.json
 
@@ -256,7 +256,7 @@ close
 -----
 Closes the BIAS camera window (specified via port address). 
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?close
 
@@ -269,7 +269,7 @@ get-frame-count
 ---------------
 Returns the current frame count from the associate BIAS camera window.
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?get_frame-count
 
@@ -287,7 +287,7 @@ get-camera-guid
 
 Returns the camera's GUID (Globally Unique Identifier). 
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?get-camera-guid
 
@@ -305,7 +305,7 @@ get-status
 ----------
 Returns status information for the BIAS application in JSON format.
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?get-status
 
@@ -344,7 +344,7 @@ set-video-file
 --------------
 Sets the current video file name for logging.
 
-.. code-block:: bash
+.. code-block:: none
     
     http://localhost:5010/?set-video-file=<video file name>
 
@@ -354,7 +354,7 @@ based on the current video file format. For example, setting the video file to
 "my_video_file" located in "C:\Users\Will\Documents" can be accomplished as
 follows:
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?set-video-file=C:\Users\Will\Documents\my_video_file
     
@@ -365,7 +365,7 @@ get-video-file
 --------------
 Returns the full path to the currently specified video file.
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?get-video-file
 
@@ -387,7 +387,7 @@ get-time-stamp
 --------------
 Returns the current image capture time stamp.
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?get-time-stamp
 
@@ -409,7 +409,7 @@ get-frames-per-sec
 ------------------
 Returns the  (measured) frame rate for the current capture (zero otherwise).  
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?get-frames-per-sec
 
@@ -432,7 +432,7 @@ get-window-geometry
 -------------------
 Returns the current (GUI) camera window geometry - i.e. the x position, y position,  width and height in pixels.
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?get-window-geometry
 
@@ -462,7 +462,7 @@ set-window-geometry
 -------------------
 Sets the geometry for the current camera window GUI. 
 
-.. code-block:: bash
+.. code-block:: none 
 
     http:://localhost:5010/?set-window-geometry=<window geometery json data>
 
@@ -479,7 +479,7 @@ The window geometry data is specified in the json format as shown below
 
 An example demonstrating how to set the window geometry is as follows
 
-.. code-block:: bash
+.. code-block:: none
 
     http://localhost:5010/?set-window-geometry={"height":600,"width":600,"x":1000,"y":100} 
 
@@ -487,8 +487,98 @@ An example demonstrating how to set the window geometry is as follows
 
 plugin-cmd
 ----------
-Run the specified plugin command TODO
+Runs a command specific to a BIAS plugin.  For example
+
+.. code-block:: none
+
+    http://localhost:5010/?plugin-cmd={"plugin":<plugin name>,"cmd": <command name>, <optional cmd args>}}
+
+The <plugin name>, <command name> and  <optional arguments> are specific to the
+given plugin. In general different plugins will different commands available. 
 
 .. _section_cmd_set-camera-name:
+
+
+Grab Detector Plugin Commands
+=============================
+
+The list of available commands for the grab detector plugin are given below.
+
+* :ref:`section_plugin_cmd_grab_detector_connect`
+* :ref:`section_plugin_cmd_grab_detector_disconnect`
+* :ref:`section_plugin_cmd_grab_detector_reset`
+* :ref:`section_plugin_cmd_grab_detector_set-config`
+
+
+
+.. _section_plugin_cmd_grab_detector_connect:
+
+connect
+-------
+Connects the grab detector plugin to the trigger device hardware.
+
+.. code-block:: none
+
+    http::/localhost:5010?/plugin-cmd={"plugin":"grabDetector","cmd": "connect"}
+
+.. _section_plugin_cmd_grab_detector_disconnect:
+
+disconnect
+----------
+
+Disconnects the grab detector plugin from the trigger device hardware.
+
+.. code-block:: none
+
+    http://localhost:5010?/plugin-cmd={"plugin":"grabDetector","cmd":"disconnect"}
+
+
+.. _section_plugin_cmd_grab_detector_reset:
+
+reset
+-----
+Resets (re-enables) the grab detector hardware trigger
+
+.. code-block:: none
+
+    http://localhost:5010?/plugin-cmd={"plugin":"grabDetector","cmd":"reset"}
+
+
+.. _section_plugin_cmd_grab_detector_set-config:
+
+set-config
+----------
+Set the grab detector plugin's configuration
+
+.. code-block:: none
+
+    http://localhost:5010/?plugin-cmd={"plugin":"grabDetector","cmd":"set-config","config":<config-json>}
+    
+where <config-json> is a JSON object containing the desired plugin configuration parameters. An example is 
+given below:
+
+.. code-block:: javascript
+
+    { 
+        "detectBox" : {
+            "color" : "ff0000",
+            "height" : 100,
+            "width" : 100,
+            "xPos" : 0,
+            "yPos" : 0 
+        },
+        "device" : {
+            "autoConnect" : false,
+            "outputPin" : 4,
+            "portName" : "ttyUSB0",
+            "pulseDuration" : 0.02 
+        },
+        "trigger" : {
+            "armedState" : true,
+            "enabled" : true,
+            "medianFilter" : 3,
+            "threshold" : 100 
+        }
+    }
 
 
