@@ -235,6 +235,11 @@ in  tempory branch named &#8216;old-build-temp&#8217;.</p>
 anything. However, I typically create a directory named &#8216;build&#8217; in the parent
 directory of the opencv&#8217;s source directory - i.e., one directory up from the root
 of the source tree.</p>
+<p>In the opencv/cmake directory edit the file &#8216;openCVCompilerOptions.cmake&#8217; and comment
+out the following line (by placing a # in front)</p>
+<div class="highlight-none"><div class="highlight"><pre>add_extra_compiler_option(-Werror=non-virtual-dtor)
+</pre></div>
+</div>
 <p>Configure OpenCV by running</p>
 <div class="highlight-bash"><div class="highlight"><pre>cmake-gui.exe
 </pre></div>

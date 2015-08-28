@@ -266,7 +266,14 @@ Start by creating a build directory. Note, this can be anywhere and named
 anything. However, I typically create a directory named 'build' in the parent
 directory of the opencv's source directory - i.e., one directory up from the root
 of the source tree.   
-    
+
+In the opencv/cmake directory edit the file 'openCVCompilerOptions.cmake' and comment 
+out the following line (by placing a # in front)
+
+.. code-block:: none
+
+  add_extra_compiler_option(-Werror=non-virtual-dtor)
+
 Configure OpenCV by running 
 
 .. code-block:: bash
