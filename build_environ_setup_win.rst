@@ -279,6 +279,7 @@ In the configuration tool perform the following steps
   * Run configure
   * Set the build type to MinGW
   * Make sure that the following options are selected: WITH_QT, WITH_EIGEN
+  * Make sure that WITH_IPP is not selected.
   * Set EIGEN_INCLUDE_PATH to point to the location of the Eigen library 
   * Re-run configure 
   * Run generate
