@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Setting up a build environment on windows 7&amp;8 &mdash; BIAS 0.1 documentation</title>
+    <title>Setting up a build environment on windows 7&amp;8 &mdash; BIAS 0.53 documentation</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1',
+        VERSION:     '0.53',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,14 +23,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="BIAS 0.1 documentation" href="index.html" />
+    <link rel="top" title="BIAS 0.53 documentation" href="index.html" />
     <link rel="prev" title="BIAS JSON configuration" href="bias_json_config.html" /> 
   </head>
   <body>
       <div class="header"><a href="http://www.iorodeo.com"  target="_blank">
   <img class="rightlogo" src="_static/iorodeo_logo.png" alt="Logo"/>
   </a><h1 class="heading"><a href="index.html">
-  <span>BIAS 0.1 documentation</span></a></h1>
+  <span>BIAS 0.53 documentation</span></a></h1>
 <h2 class="heading"><span>Setting up a build environment on windows 7&amp;8</span></h2>
       </div>
       <div class="topnav">
@@ -235,11 +235,6 @@ in  tempory branch named &#8216;old-build-temp&#8217;.</p>
 anything. However, I typically create a directory named &#8216;build&#8217; in the parent
 directory of the opencv&#8217;s source directory - i.e., one directory up from the root
 of the source tree.</p>
-<p>In the opencv/cmake directory edit the file &#8216;openCVCompilerOptions.cmake&#8217; and comment
-out the following line (by placing a # in front)</p>
-<div class="highlight-none"><div class="highlight"><pre>add_extra_compiler_option(-Werror=non-virtual-dtor)
-</pre></div>
-</div>
 <p>Configure OpenCV by running</p>
 <div class="highlight-bash"><div class="highlight"><pre>cmake-gui.exe
 </pre></div>
@@ -262,8 +257,8 @@ and  build  opencv by running the following command</p>
 <div class="highlight-bash"><div class="highlight"><pre>mingw32-make
 </pre></div>
 </div>
-<p>After, building the library and the &#8216;build/bin&#8217; sub-directory to the windows path, e.g.,</p>
-<div class="highlight-none"><div class="highlight"><pre>C:\&lt;PATH-TO-BUILD-DIRECTORY&gt;\build\bin
+<p>After, building the library and the &#8216;bin&#8217; sub-directory to the windows path, e.g.,</p>
+<div class="highlight-none"><div class="highlight"><pre>C:\&lt;PATH-TO-BUILD-DIRECTORY&gt;\bin
 </pre></div>
 </div>
 </div>

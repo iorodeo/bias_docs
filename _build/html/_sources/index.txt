@@ -10,6 +10,8 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   intro
+   basic_usage
    ext_control_http_cmds
    bias_json_config
    build_environ_setup_win

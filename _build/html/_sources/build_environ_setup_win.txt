@@ -267,12 +267,15 @@ anything. However, I typically create a directory named 'build' in the parent
 directory of the opencv's source directory - i.e., one directory up from the root
 of the source tree.   
 
-In the opencv/cmake directory edit the file 'openCVCompilerOptions.cmake' and comment 
-out the following line (by placing a # in front)
-
-.. code-block:: none
-
-  add_extra_compiler_option(-Werror=non-virtual-dtor)
+..  Opencv 3.0 build instructions
+..  -----------------------------
+.. 
+..  In the opencv/cmake directory edit the file 'openCVCompilerOptions.cmake' and comment 
+..  out the following line (by placing a # in front)
+..  
+..  .. code-block:: none
+..  
+..    add_extra_compiler_option(-Werror=non-virtual-dtor)
 
 Configure OpenCV by running 
 
@@ -298,13 +301,26 @@ and  build  opencv by running the following command
 
   mingw32-make
 
+.. ----------------------------
+..  OpenCV 3.0 buld notes
+.. ------------------------------
+..  Next run 
+..  
+..  .. code-block:: bash
+..  
+..      mingw32-make install
+..  
+..  After, building the library and the 'bin' sub-directory to the windows path, e.g., 
+..  
+..  .. code-block:: none
+..  
+..    C:\<PATH-TO-INSTALL-DIRECTORY>\install\x64\mingw\bin
 
-After, building the library and the 'build/bin' sub-directory to the windows path, e.g., 
+After, building the library and the 'bin' sub-directory to the windows path, e.g., 
 
 .. code-block:: none
 
-  C:\<PATH-TO-BUILD-DIRECTORY>\build\bin 
-
+  C:\<PATH-TO-BUILD-DIRECTORY>\bin
 
 
 .. _section_win_install_flycapture2:
