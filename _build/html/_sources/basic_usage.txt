@@ -10,8 +10,18 @@ Starting/Stopping image capture
 -------------------------------
 
 
-Setting the camera properties
+Setting camera properties
 -----------------------------
+
+
+Logging
+-----------------------------
+
+Saving/loading configurations
+------------------------------
+
+
+
 
 
 
