@@ -50,20 +50,75 @@
         
   <div class="section" id="basic-usage">
 <h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="#basic-usage-connect-to-camera"><em>Connecting to a camera</em></a></li>
+<li><a class="reference internal" href="#basic-usage-start-stop-capture"><em>Start/Stop image capture</em></a></li>
+<li><a class="reference internal" href="#basic-usage-camera-settings"><em>Camera Settings</em></a></li>
+<li><a class="reference internal" href="#basic-usage-logging-settings"><em>Logging Settings</em></a></li>
+<li><a class="reference internal" href="#basic-usage-save-load-configuration"><em>Saving/loading configurations</em></a></li>
+</ul>
 <div class="section" id="connecting-to-a-camera">
-<h2>Connecting to a camera<a class="headerlink" href="#connecting-to-a-camera" title="Permalink to this headline">¶</a></h2>
+<span id="basic-usage-connect-to-camera"></span><h2>Connecting to a camera<a class="headerlink" href="#connecting-to-a-camera" title="Permalink to this headline">¶</a></h2>
+<p>When BIAS is started it will try to enumerate all compatible cameras which are
+connected to the system. It will then open a separate GUI window for each
+camera. In to lower left corner of each GUI window is a <strong>Connect</strong> button.</p>
+<div class="figure align-center">
+<img alt="_images/bias_connect_button_image.png" src="_images/bias_connect_button_image.png" />
 </div>
-<div class="section" id="starting-stopping-image-capture">
-<h2>Starting/Stopping image capture<a class="headerlink" href="#starting-stopping-image-capture" title="Permalink to this headline">¶</a></h2>
+<p>camera. To connect to a camera press the <strong>Connect</strong> button at the bottom of
+the GUI window. After connecting to the camera the  vendor and model of the
+camera will be displayed in the text box to the right of the <strong>Start</strong> button
+as shown in the example below.</p>
+<div class="figure align-center">
+<img alt="_images/bias_camera_vendor_and_model.png" src="_images/bias_camera_vendor_and_model.png" />
 </div>
-<div class="section" id="setting-camera-properties">
-<h2>Setting camera properties<a class="headerlink" href="#setting-camera-properties" title="Permalink to this headline">¶</a></h2>
+<p>Note, that after connecting to the camera the text on the <strong>Connect</strong> button
+changes to <strong>Disconnect</strong> . This button can be used to disconnect from the
+camera when you are finished using it.</p>
 </div>
-<div class="section" id="logging">
-<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="start-stop-image-capture">
+<span id="basic-usage-start-stop-capture"></span><h2>Start/Stop image capture<a class="headerlink" href="#start-stop-image-capture" title="Permalink to this headline">¶</a></h2>
+<p>To start image capture press the <strong>Start</strong> button located in the lower corner
+of the GUI window - just to right of the <strong>Connect</strong> button.</p>
+<div class="figure align-center">
+<img alt="_images/bias_start_button.png" src="_images/bias_start_button.png" />
+</div>
+<p>After image capture is started a live preview image will be shown on the
+<strong>Preview</strong> tab of the camera&#8217;s GUI window as shown below.</p>
+<div class="figure align-center">
+<img alt="_images/bias_after_start_example_annotated.png" src="_images/bias_after_start_example_annotated.png" />
+</div>
+<p>Notes:</p>
+<ul class="simple">
+<li>A frame counter,  in the upper right corner of the preview image (green),  displays the number or frames captured.</li>
+<li>The status bar, at the bottom of the window, shows the logging and timer status, the image size and the frame rate.</li>
+<li>Duration of the current capture session is shown in the lower right corner.</li>
+<li>The text in the <strong>Start</strong> button will change to <strong>Stop</strong> and this button can now be used to stop image capture.</li>
+</ul>
+</div>
+<div class="section" id="camera-settings">
+<span id="basic-usage-camera-settings"></span><h2>Camera Settings<a class="headerlink" href="#camera-settings" title="Permalink to this headline">¶</a></h2>
+<p>The camera settings can be adjusted from the <strong>Camera</strong> menu located near the top of the GUI window.</p>
+<div class="figure align-center">
+<img alt="_images/bias_camera_menu.png" src="_images/bias_camera_menu.png" />
+</div>
+<p>The <strong>Camera</strong> menu contains the following items</p>
+<ul class="simple">
+<li>Properties - gain, shutter, brightness, etc</li>
+<li>Video Mode - 640x480Y8, 1280x960Y8, 1280x960Y16, Format7, etc.</li>
+<li>Frame Rate - 30Hz, 60Hz,  Format7, etc.</li>
+<li>Trigger - either internal or external</li>
+<li>Format7 Settings - dialog for Format7 specific settings such as mode, pixel format and ROI.</li>
+</ul>
+<div class="figure align-center">
+<img alt="_images/bias_camera_menu_items.png" src="_images/bias_camera_menu_items.png" />
+</div>
+</div>
+<div class="section" id="logging-settings">
+<span id="basic-usage-logging-settings"></span><h2>Logging Settings<a class="headerlink" href="#logging-settings" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="saving-loading-configurations">
-<h2>Saving/loading configurations<a class="headerlink" href="#saving-loading-configurations" title="Permalink to this headline">¶</a></h2>
+<span id="basic-usage-save-load-configuration"></span><h2>Saving/loading configurations<a class="headerlink" href="#saving-loading-configurations" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
