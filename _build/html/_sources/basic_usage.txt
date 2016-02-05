@@ -134,7 +134,18 @@ source - usually connected to a GPIO on the camera.
 
 Camera Settings - Format7 Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The camera's frame rate (when not in Format7 mode) can be set via the **Camera -> Frame Rate** sub-menu item.
+The Format7 Settings menu item,  **Camera -> Format7 Settings**, opens a dialog
+which can be used to set the pixel format and region of interest (ROI) when
+operating in the Format7 video mode.
+
+.. figure:: _static/bias_camera_format7_menu.png
+   :align:  center
+
+
+The Format7 Settings dialog is shown below.
+
+.. figure:: _static/bias_camera_format7_dialog.png
+   :align:  center
 
 
 .. _basic_usage_logging_settings:
