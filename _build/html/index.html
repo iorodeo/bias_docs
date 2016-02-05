@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Contents &mdash; BIAS 0.53 documentation</title>
+    <title>BIAS (Basic Image Acquisition Software) &mdash; BIAS 0.58 documentation</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.53',
+        VERSION:     '0.58',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,15 +23,15 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="BIAS 0.53 documentation" href="#" />
+    <link rel="top" title="BIAS 0.58 documentation" href="#" />
     <link rel="next" title="Introduction" href="intro.html" /> 
   </head>
   <body>
       <div class="header"><a href="http://www.iorodeo.com"  target="_blank">
   <img class="rightlogo" src="_static/iorodeo_logo.png" alt="Logo"/>
   </a><h1 class="heading"><a href="#">
-  <span>BIAS 0.53 documentation</span></a></h1>
-<h2 class="heading"><span>Contents</span></h2>
+  <span>BIAS 0.58 documentation</span></a></h1>
+<h2 class="heading"><span>BIAS (Basic Image Acquisition Software)</span></h2>
       </div>
       <div class="topnav">
       
@@ -45,7 +45,13 @@
       <div class="content">
         
         
-  <div class="section" id="contents">
+  <div class="section" id="bias-basic-image-acquisition-software">
+<h1>BIAS (Basic Image Acquisition Software)<a class="headerlink" href="#bias-basic-image-acquisition-software" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center">
+<img alt="_images/bias_charlie.png" src="_images/bias_charlie.png" />
+</div>
+</div>
+<div class="section" id="contents">
 <h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
@@ -58,15 +64,51 @@
 <li class="toctree-l1"><a class="reference internal" href="basic_usage.html">Basic Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="basic_usage.html#connecting-to-a-camera">Connecting to a camera</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basic_usage.html#start-stop-image-capture">Start/Stop image capture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_usage.html#camera-settings">Camera Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_usage.html#camera-settings">Camera Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basic_usage.html#camera-settings-properties">Camera Settings - Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_usage.html#camera-settings-video-mode">Camera Settings - Video Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_usage.html#camera-settings-frame-rate">Camera Settings - Frame Rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_usage.html#camera-settings-trigger">Camera Settings - Trigger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_usage.html#camera-settings-format7-settings">Camera Settings - Format7 Settings</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="basic_usage.html#logging-settings">Logging Settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basic_usage.html#saving-loading-configurations">Saving/loading configurations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ext_control_http_cmds.html">External Control HTTP Commands</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="ext_control_http_cmds.html#basic-command-structure">Basic Command Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ext_control_http_cmds.html#bias-commands">BIAS Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ext_control_http_cmds.html#grab-detector-plugin-commands">Grab Detector Plugin Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ext_control_http_cmds.html#bias-commands">BIAS Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#connect">connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#disconnect">disconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#start-capture">start-capture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#stop-capture">stop-capture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#get-configuration">get-configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#set-configuration">set-configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#enable-logging">enable-logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#disable-logging">disable-logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#load-configuration">load-configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#save-configuration">save-configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#close">close</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#get-frame-count">get-frame-count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#get-camera-guid">get-camera-guid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#get-status">get-status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#set-video-file">set-video-file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#get-video-file">get-video-file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#get-time-stamp">get-time-stamp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#get-frames-per-sec">get-frames-per-sec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#get-window-geometry">get-window-geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#set-window-geometry">set-window-geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#plugin-cmd">plugin-cmd</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ext_control_http_cmds.html#grab-detector-plugin-commands">Grab Detector Plugin Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#section-plugin-cmd-grab-detector-connect">connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#section-plugin-cmd-grab-detector-disconnect">disconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#reset">reset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ext_control_http_cmds.html#set-config">set-config</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="bias_json_config.html">BIAS JSON configuration</a><ul>
@@ -81,7 +123,11 @@
 <li class="toctree-l2"><a class="reference internal" href="build_environ_setup_win.html#download-configure-and-build-qt">Download, configure and build Qt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build_environ_setup_win.html#download-and-install-cmake">Download and install CMake</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build_environ_setup_win.html#downlad-an-unpack-eigen">Downlad an unpack Eigen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build_environ_setup_win.html#download-configure-and-build-opencv">Download Configure, and build OpenCV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_environ_setup_win.html#download-configure-and-build-opencv">Download Configure, and build OpenCV</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="build_environ_setup_win.html#download">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build_environ_setup_win.html#configure-and-build">Configure and Build</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="build_environ_setup_win.html#install-point-grey-s-flycapture2-libraray-a-camera-etc">Install Point Grey&#8217;s FlyCapture2 libraray, a camera, etc.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build_environ_setup_win.html#install-mercurial">Install mercurial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build_environ_setup_win.html#download-and-build-the-latest-version-of-bias">Download and build the latest version of BIAS</a></li>

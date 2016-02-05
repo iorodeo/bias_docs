@@ -83,6 +83,60 @@ The **Camera** menu contains the following items
    :align:  center
 
 
+Camera Settings - Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The camera properties can be set via the **Camera -> Properties**
+sub-menu item.  The cmaera properties include features such as: gain, shutter, brightness, sharpness, auto-exposure,
+etc.  Note, the specific camera properties available will vary by camera model. 
+
+.. figure:: _static/bias_camera_prop_menu.png
+   :align:  center
+
+
+Camera Settings - Video Mode 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The camera's video mode can be set via the **Camera -> Video Mode** sub-menu
+item. The video mode setting allows the user to the mage size and pixel type.
+The specific video modes available will depend on the camera model.  Note, BIAS
+currently only supports the Format7 video mode.
+
+.. figure:: _static/bias_camera_vidmode_menu.png
+   :align:  center
+
+
+Camera Settings - Frame Rate 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The camera's frame rate (when not in Format7 mode) can be set via the **Camera
+-> Frame Rate** sub-menu item.  Note, this only applies to non-Format7 video
+modes. In Format7 video mode this should be set 'Format7' as the frame rate in
+Format7 mode is a camera and is set in the **Cameara -> Properties -> Frame
+Rate** menu item.
+
+.. figure:: _static/bias_camera_framerate_menu.png
+   :align:  center
+
+
+Camera Settings - Trigger 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The type of triggering used when acquiring images can be selected via the
+**Camera -> Trigger** sub-menu item.  There are two tigger options: *internal*
+and *external*. When using internal trigger mode image acquistion is triggered
+by the camera itself according to the current frame-rate setting. When using
+external trigger mode, image acquisition is triggered using an external trigger
+source - usually connected to a GPIO on the camera.
+
+.. figure:: _static/bias_camera_trigger_menu.png
+   :align:  center
+
+
+
+Camera Settings - Format7 Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The camera's frame rate (when not in Format7 mode) can be set via the **Camera -> Frame Rate** sub-menu item.
+
+
 .. _basic_usage_logging_settings:
 
 Logging Settings
