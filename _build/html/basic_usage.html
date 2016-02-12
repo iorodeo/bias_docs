@@ -113,8 +113,8 @@ of the GUI window - just to right of the <strong>Connect</strong> button.</p>
 <div class="figure align-center">
 <img alt="_images/bias_camera_menu_items.png" src="_images/bias_camera_menu_items.png" />
 </div>
-<div class="section" id="camera-settings-properties">
-<h3>Camera Settings - Properties<a class="headerlink" href="#camera-settings-properties" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
 <p>The camera properties can be set via the <strong>Camera -&gt; Properties</strong>
 sub-menu item.  The cmaera properties include features such as: gain, shutter, brightness, sharpness, auto-exposure,
 etc.  Note, the specific camera properties available will vary by camera model.</p>
@@ -122,8 +122,8 @@ etc.  Note, the specific camera properties available will vary by camera model.<
 <img alt="_images/bias_camera_prop_menu.png" src="_images/bias_camera_prop_menu.png" />
 </div>
 </div>
-<div class="section" id="camera-settings-video-mode">
-<h3>Camera Settings - Video Mode<a class="headerlink" href="#camera-settings-video-mode" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="video-mode">
+<h3>Video Mode<a class="headerlink" href="#video-mode" title="Permalink to this headline">¶</a></h3>
 <p>The camera&#8217;s video mode can be set via the <strong>Camera -&gt; Video Mode</strong> sub-menu
 item. The video mode setting allows the user to the mage size and pixel type.
 The specific video modes available will depend on the camera model.  Note, BIAS
@@ -132,8 +132,8 @@ currently only supports the Format7 video mode.</p>
 <img alt="_images/bias_camera_vidmode_menu.png" src="_images/bias_camera_vidmode_menu.png" />
 </div>
 </div>
-<div class="section" id="camera-settings-frame-rate">
-<h3>Camera Settings - Frame Rate<a class="headerlink" href="#camera-settings-frame-rate" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="frame-rate">
+<h3>Frame Rate<a class="headerlink" href="#frame-rate" title="Permalink to this headline">¶</a></h3>
 <p>The camera&#8217;s frame rate (when not in Format7 mode) can be set via the <strong>Camera
 -&gt; Frame Rate</strong> sub-menu item.  Note, this only applies to non-Format7 video
 modes. In Format7 video mode this should be set &#8216;Format7&#8217; as the frame rate in
@@ -143,8 +143,8 @@ Rate</strong> menu item.</p>
 <img alt="_images/bias_camera_framerate_menu.png" src="_images/bias_camera_framerate_menu.png" />
 </div>
 </div>
-<div class="section" id="camera-settings-trigger">
-<h3>Camera Settings - Trigger<a class="headerlink" href="#camera-settings-trigger" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="trigger">
+<h3>Trigger<a class="headerlink" href="#trigger" title="Permalink to this headline">¶</a></h3>
 <p>The type of triggering used when acquiring images can be selected via the
 <strong>Camera -&gt; Trigger</strong> sub-menu item.  There are two tigger options: <em>internal</em>
 and <em>external</em>. When using internal trigger mode image acquistion is triggered
@@ -155,8 +155,8 @@ source - usually connected to a GPIO on the camera.</p>
 <img alt="_images/bias_camera_trigger_menu.png" src="_images/bias_camera_trigger_menu.png" />
 </div>
 </div>
-<div class="section" id="camera-settings-format7-settings">
-<h3>Camera Settings - Format7 Settings<a class="headerlink" href="#camera-settings-format7-settings" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="format7-settings">
+<h3>Format7 Settings ...<a class="headerlink" href="#format7-settings" title="Permalink to this headline">¶</a></h3>
 <p>The Format7 Settings menu item,  <strong>Camera -&gt; Format7 Settings</strong>, opens a dialog
 which can be used to set the pixel format and region of interest (ROI) when
 operating in the Format7 video mode.</p>
@@ -167,10 +167,75 @@ operating in the Format7 video mode.</p>
 <div class="figure align-center">
 <img alt="_images/bias_camera_format7_dialog.png" src="_images/bias_camera_format7_dialog.png" />
 </div>
+<p>The format7 settings include the follow:</p>
+<ul class="simple">
+<li>Format7 <em>Mode</em> and <em>Pixel Format</em>. Note, the exact format7 modes and pixel
+formats will depend upon the camera mode.</li>
+<li>The <em>Region Of Interest</em> (or ROI) - this  feature allows the user to restrict
+aquisition for a sub-region of the full image frame.  The ROI is specified by
+selecting  X Offset, Y Offset, X Width and Y Height. The ROI feature maybe
+set to  &#8220;off&#8221;, &#8220;show&#8221;, or &#8220;enable&#8221;. When set to &#8220;off&#8221; the full image frame is
+captured. When set to &#8220;enable&#8221; the sub-region selected will be shown as a red
+rectangle in the preview window. When set to &#8220;enable&#8221; image capture is
+restriced to the selected sub-region.</li>
+</ul>
+<p>The example below demonstrates how ROI sub-region is displayed in red on the
+full image when &#8220;show&#8221; is selected in the Format7 Settings dialog.</p>
+<div class="figure align-center">
+<img alt="_images/bias_camera_format7_ROI_show_example.png" src="_images/bias_camera_format7_ROI_show_example.png" />
+</div>
 </div>
 </div>
 <div class="section" id="logging-settings">
 <span id="basic-usage-logging-settings"></span><h2>Logging Settings<a class="headerlink" href="#logging-settings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enabled">
+<h3>Enabled<a class="headerlink" href="#enabled" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="_images/bias_logging_enabled_checkbox.png" src="_images/bias_logging_enabled_checkbox.png" />
+</div>
+</div>
+<div class="section" id="format">
+<h3>Format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="_images/bias_logging_format_menu.png" src="_images/bias_logging_format_menu.png" />
+</div>
+</div>
+<div class="section" id="video-file">
+<h3>Video File ...<a class="headerlink" href="#video-file" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="_images/bias_logging_videofile_menu.png" src="_images/bias_logging_videofile_menu.png" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/bias_logging_videofile_dialog.png" src="_images/bias_logging_videofile_dialog.png" />
+</div>
+</div>
+<div class="section" id="settings">
+<h3>Settings ...<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="_images/bias_logging_settings_menu.png" src="_images/bias_logging_settings_menu.png" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/bias_logging_settings_dialog.png" src="_images/bias_logging_settings_dialog.png" />
+</div>
+</div>
+<div class="section" id="auto-naming">
+<h3>Auto Naming ...<a class="headerlink" href="#auto-naming" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="_images/bias_logging_autonaming_menu.png" src="_images/bias_logging_autonaming_menu.png" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/bias_logging_autonaming_dialog.png" src="_images/bias_logging_autonaming_dialog.png" />
+</div>
+</div>
 </div>
 <div class="section" id="saving-loading-configurations">
 <span id="basic-usage-save-load-configuration"></span><h2>Saving/loading configurations<a class="headerlink" href="#saving-loading-configurations" title="Permalink to this headline">¶</a></h2>

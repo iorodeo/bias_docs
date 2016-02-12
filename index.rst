@@ -6,8 +6,12 @@
 BIAS (Basic Image Acquisition Software)
 =======================================
 
+|
+
 .. figure:: _static/bias_charlie.png
    :align:  center
+
+|
 
 Contents
 ========

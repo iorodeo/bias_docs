@@ -83,8 +83,8 @@ The **Camera** menu contains the following items
    :align:  center
 
 
-Camera Settings - Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Properties
+^^^^^^^^^^^
 
 The camera properties can be set via the **Camera -> Properties**
 sub-menu item.  The cmaera properties include features such as: gain, shutter, brightness, sharpness, auto-exposure,
@@ -94,8 +94,8 @@ etc.  Note, the specific camera properties available will vary by camera model.
    :align:  center
 
 
-Camera Settings - Video Mode 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Video Mode 
+^^^^^^^^^^^
 
 The camera's video mode can be set via the **Camera -> Video Mode** sub-menu
 item. The video mode setting allows the user to the mage size and pixel type.
@@ -106,8 +106,8 @@ currently only supports the Format7 video mode.
    :align:  center
 
 
-Camera Settings - Frame Rate 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Frame Rate 
+^^^^^^^^^^^
 The camera's frame rate (when not in Format7 mode) can be set via the **Camera
 -> Frame Rate** sub-menu item.  Note, this only applies to non-Format7 video
 modes. In Format7 video mode this should be set 'Format7' as the frame rate in
@@ -118,8 +118,8 @@ Rate** menu item.
    :align:  center
 
 
-Camera Settings - Trigger 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Trigger 
+^^^^^^^^
 The type of triggering used when acquiring images can be selected via the
 **Camera -> Trigger** sub-menu item.  There are two tigger options: *internal*
 and *external*. When using internal trigger mode image acquistion is triggered
@@ -132,8 +132,8 @@ source - usually connected to a GPIO on the camera.
 
 
 
-Camera Settings - Format7 Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Format7 Settings ...
+^^^^^^^^^^^^^^^^^^^^^
 The Format7 Settings menu item,  **Camera -> Format7 Settings**, opens a dialog
 which can be used to set the pixel format and region of interest (ROI) when
 operating in the Format7 video mode.
@@ -147,13 +147,75 @@ The Format7 Settings dialog is shown below.
 .. figure:: _static/bias_camera_format7_dialog.png
    :align:  center
 
+The format7 settings include the follow:
+
+* Format7 *Mode* and *Pixel Format*. Note, the exact format7 modes and pixel
+  formats will depend upon the camera mode.
+
+* The *Region Of Interest* (or ROI) - this  feature allows the user to restrict
+  aquisition for a sub-region of the full image frame.  The ROI is specified by
+  selecting  X Offset, Y Offset, X Width and Y Height. The ROI feature maybe
+  set to  "off", "show", or "enable". When set to "off" the full image frame is
+  captured. When set to "enable" the sub-region selected will be shown as a red
+  rectangle in the preview window. When set to "enable" image capture is
+  restriced to the selected sub-region.  
+
+The example below demonstrates how ROI sub-region is displayed in red on the
+full image when "show" is selected in the Format7 Settings dialog.
+
+.. figure:: _static/bias_camera_format7_ROI_show_example.png
+   :align:  center
 
 .. _basic_usage_logging_settings:
 
 Logging Settings
 -----------------------------
 
+Enabled
+^^^^^^^^
 
+.. figure:: _static/bias_logging_enabled_checkbox.png
+   :align:  center
+
+Format
+^^^^^^^
+
+.. figure:: _static/bias_logging_format_menu.png
+   :align:  center
+
+Video File ...
+^^^^^^^^^^^^^^^
+
+.. figure:: _static/bias_logging_videofile_menu.png
+   :align:  center
+
+|
+
+.. figure:: _static/bias_logging_videofile_dialog.png
+   :align:  center
+
+Settings ...
+^^^^^^^^^^^^^
+
+.. figure:: _static/bias_logging_settings_menu.png
+   :align:  center
+
+|
+
+.. figure:: _static/bias_logging_settings_dialog.png
+   :align:  center
+
+
+Auto Naming ...
+^^^^^^^^^^^^^^^^
+
+.. figure:: _static/bias_logging_autonaming_menu.png
+   :align:  center
+
+|
+
+.. figure:: _static/bias_logging_autonaming_dialog.png
+   :align:  center
 
 .. _basic_usage_save_load_configuration:
 
