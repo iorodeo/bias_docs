@@ -2,12 +2,29 @@
 Basic Usage
 *******************
 
+* :ref:`basic_usage_save_load_configuration`
 * :ref:`basic_usage_connect_to_camera`
 * :ref:`basic_usage_start_stop_capture`
 * :ref:`basic_usage_camera_settings`
 * :ref:`basic_usage_logging_settings`
-* :ref:`basic_usage_save_load_configuration`
+* :ref:`basic_usage_timer`
 
+
+.. _basic_usage_save_load_configuration:
+
+Saving/loading configurations
+------------------------------
+
+The current BIAS configuration, e.g. the camera, logging, timer, etc, settings
+can be loaded/saved to/from a json file using the **File -> Load
+Configuration...** and **File -> Save Configuration...** menu items. Note, the
+camera must be connect in order to load/save the a configuration.
+
+.. figure:: _static/bias_file_save_load_config.png
+   :align:  center
+
+An example of BIAS's json configuration format can be found here
+:ref:`section_bias_json_config_example`.
 
 .. _basic_usage_connect_to_camera:
 
@@ -160,8 +177,10 @@ The format7 settings include the follow:
   rectangle in the preview window. When set to "enable" image capture is
   restriced to the selected sub-region.  
 
-The example below demonstrates how ROI sub-region is displayed in red on the
+The example below demonstrates how the ROI sub-region is displayed in red on the
 full image when "show" is selected in the Format7 Settings dialog.
+
+|
 
 .. figure:: _static/bias_camera_format7_ROI_show_example.png
    :align:  center
@@ -174,11 +193,17 @@ Logging Settings
 Enabled
 ^^^^^^^^
 
+Logging can be enabled via the  **Logging -> Enabled** menu item as illustrated
+in the image below.
+
 .. figure:: _static/bias_logging_enabled_checkbox.png
    :align:  center
 
 Format
 ^^^^^^^
+
+BIAS supports several different logging file formats (bmp, jpg, avi, fmf, ufmf)
+which can be selected via the **Logging -> Format** sub-menu.
 
 .. figure:: _static/bias_logging_format_menu.png
    :align:  center
@@ -186,8 +211,15 @@ Format
 Video File ...
 ^^^^^^^^^^^^^^^
 
+The name of the output video file (or directory of files depending on the file
+format) can be selected via the **Logging -> Video File...** menu item.
+
+
 .. figure:: _static/bias_logging_videofile_menu.png
    :align:  center
+
+After selecting this item a standard file selection dialog will appear with which you can select
+the desired video file or directory.
 
 |
 
@@ -197,8 +229,17 @@ Video File ...
 Settings ...
 ^^^^^^^^^^^^^
 
+The settings specific to each logging format can be adjusted via the **Video
+Logging Settings** dialog. This dialog is opened via the **Logging ->
+Settings...** menu item.
+
 .. figure:: _static/bias_logging_settings_menu.png
    :align:  center
+
+The **Video Logging Settings** dialog contains a tab for logging format and
+should open on the tab of the currently selected format. The tab contains all
+of the configurable options for the given file format. A detailed description
+of these options, for each format, can be found here [TO DO].
 
 |
 
@@ -209,21 +250,100 @@ Settings ...
 Auto Naming ...
 ^^^^^^^^^^^^^^^^
 
+BIAS supports several autonaming options which automatically add information to
+the video filename e.g. time, date, camera number or GUID, etc. The autonaming
+options can set via the **Video File: Auto Naming** dialog. This dialog can be
+opened by selecting the **Logging -> Auto Naming...** menu item.
+
 .. figure:: _static/bias_logging_autonaming_menu.png
    :align:  center
 
 |
 
+The **Video File: Auto Naming** is shown below.
+
 .. figure:: _static/bias_logging_autonaming_dialog.png
    :align:  center
 
-.. _basic_usage_save_load_configuration:
+The dialog contains three checkable items:
 
-Saving/loading configurations
-------------------------------
+* Camera Identifier: adds either the camera Global Unique
+  Identifier (GUID) or camera number to the logging file/directory name.
+
+* Time and Date: add time and date information to the file/directory name. Time
+  and date format is selectable via a drop down menu.
+
+* Version Number: adds version number to the file name e.g. 1,2, ...  This
+  option is is useful to prevent video files from being over written when they
+  have the same name.
 
 
+.. _basic_usage_timer:
+
+Timer 
+---------
+
+BIAS's capture timer can be used to create timed video acquisitions.
+
+Enabled
+^^^^^^^^
+
+The capture timer can be enabled via the **Timer -> Enabled** menu item. Note,
+when the capture timer is enabled the "duration" text label in the lower right
+corner will be split to show both the ellapsed capture time and total capture duration
+as set int the timer settings as follows:  "ellapsed time/total capture duration".
+
+.. figure:: _static/bias_timer_enabled.png
+   :align:  center
 
 
+Settings
+^^^^^^^^
+
+The timer settings can be specified via the **Timer Settings** dialog. This dialog
+can be opened by selecting the **Timer -> Settings...** menu item.
+
+.. figure:: _static/bias_timer_settings_dialog.png
+   :align:  center
+
+The total capture duration is specified in hours (hr), minutes (min) and seconds (sec). 
 
 
+.. _basic_usage_display:
+
+Display
+---------
+
+.. figure:: _static/bias_display_menu.png
+   :align:  center
+
+
+Orientation
+^^^^^^^^^^^^
+
+.. figure:: _static/bias_display_orientation.png
+   :align:  center
+
+Rotation
+^^^^^^^^^^^^
+
+.. figure:: _static/bias_display_rotation.png
+   :align:  center
+
+
+ColorMap
+^^^^^^^^^^^^
+
+.. figure:: _static/bias_display_colormap.png
+   :align:  center
+
+Alignment Tools...
+^^^^^^^^^^^^^^^^^^^
+
+.. figure:: _static/bias_display_alignment_tools.png
+   :align:  center
+
+| 
+
+.. figure:: _static/bias_display_alignment_tools_dialog.png
+   :align:  center

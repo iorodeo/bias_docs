@@ -51,12 +51,25 @@
   <div class="section" id="basic-usage">
 <h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
+<li><a class="reference internal" href="#basic-usage-save-load-configuration"><em>Saving/loading configurations</em></a></li>
 <li><a class="reference internal" href="#basic-usage-connect-to-camera"><em>Connecting to a camera</em></a></li>
 <li><a class="reference internal" href="#basic-usage-start-stop-capture"><em>Start/Stop image capture</em></a></li>
 <li><a class="reference internal" href="#basic-usage-camera-settings"><em>Camera Settings</em></a></li>
 <li><a class="reference internal" href="#basic-usage-logging-settings"><em>Logging Settings</em></a></li>
-<li><a class="reference internal" href="#basic-usage-save-load-configuration"><em>Saving/loading configurations</em></a></li>
+<li><a class="reference internal" href="#basic-usage-timer"><em>Timer</em></a></li>
 </ul>
+<div class="section" id="saving-loading-configurations">
+<span id="basic-usage-save-load-configuration"></span><h2>Saving/loading configurations<a class="headerlink" href="#saving-loading-configurations" title="Permalink to this headline">¶</a></h2>
+<p>The current BIAS configuration, e.g. the camera, logging, timer, etc, settings
+can be loaded/saved to/from a json file using the <strong>File -&gt; Load
+Configuration...</strong> and <strong>File -&gt; Save Configuration...</strong> menu items. Note, the
+camera must be connect in order to load/save the a configuration.</p>
+<div class="figure align-center">
+<img alt="_images/bias_file_save_load_config.png" src="_images/bias_file_save_load_config.png" />
+</div>
+<p>An example of BIAS&#8217;s json configuration format can be found here
+<a class="reference internal" href="bias_json_config.html#section-bias-json-config-example"><em>BIAS JSON Configuration Example</em></a>.</p>
+</div>
 <div class="section" id="connecting-to-a-camera">
 <span id="basic-usage-connect-to-camera"></span><h2>Connecting to a camera<a class="headerlink" href="#connecting-to-a-camera" title="Permalink to this headline">¶</a></h2>
 <p>When BIAS is started it will try to enumerate all compatible cameras which are
@@ -179,8 +192,11 @@ captured. When set to &#8220;enable&#8221; the sub-region selected will be shown
 rectangle in the preview window. When set to &#8220;enable&#8221; image capture is
 restriced to the selected sub-region.</li>
 </ul>
-<p>The example below demonstrates how ROI sub-region is displayed in red on the
+<p>The example below demonstrates how the ROI sub-region is displayed in red on the
 full image when &#8220;show&#8221; is selected in the Format7 Settings dialog.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="figure align-center">
 <img alt="_images/bias_camera_format7_ROI_show_example.png" src="_images/bias_camera_format7_ROI_show_example.png" />
 </div>
@@ -190,21 +206,29 @@ full image when &#8220;show&#8221; is selected in the Format7 Settings dialog.</
 <span id="basic-usage-logging-settings"></span><h2>Logging Settings<a class="headerlink" href="#logging-settings" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="enabled">
 <h3>Enabled<a class="headerlink" href="#enabled" title="Permalink to this headline">¶</a></h3>
+<p>Logging can be enabled via the  <strong>Logging -&gt; Enabled</strong> menu item as illustrated
+in the image below.</p>
 <div class="figure align-center">
 <img alt="_images/bias_logging_enabled_checkbox.png" src="_images/bias_logging_enabled_checkbox.png" />
 </div>
 </div>
 <div class="section" id="format">
 <h3>Format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h3>
+<p>BIAS supports several different logging file formats (bmp, jpg, avi, fmf, ufmf)
+which can be selected via the <strong>Logging -&gt; Format</strong> sub-menu.</p>
 <div class="figure align-center">
 <img alt="_images/bias_logging_format_menu.png" src="_images/bias_logging_format_menu.png" />
 </div>
 </div>
 <div class="section" id="video-file">
 <h3>Video File ...<a class="headerlink" href="#video-file" title="Permalink to this headline">¶</a></h3>
+<p>The name of the output video file (or directory of files depending on the file
+format) can be selected via the <strong>Logging -&gt; Video File...</strong> menu item.</p>
 <div class="figure align-center">
 <img alt="_images/bias_logging_videofile_menu.png" src="_images/bias_logging_videofile_menu.png" />
 </div>
+<p>After selecting this item a standard file selection dialog will appear with which you can select
+the desired video file or directory.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -214,9 +238,16 @@ full image when &#8220;show&#8221; is selected in the Format7 Settings dialog.</
 </div>
 <div class="section" id="settings">
 <h3>Settings ...<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h3>
+<p>The settings specific to each logging format can be adjusted via the <strong>Video
+Logging Settings</strong> dialog. This dialog is opened via the <strong>Logging -&gt;
+Settings...</strong> menu item.</p>
 <div class="figure align-center">
 <img alt="_images/bias_logging_settings_menu.png" src="_images/bias_logging_settings_menu.png" />
 </div>
+<p>The <strong>Video Logging Settings</strong> dialog contains a tab for logging format and
+should open on the tab of the currently selected format. The tab contains all
+of the configurable options for the given file format. A detailed description
+of these options, for each format, can be found here [TO DO].</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -226,19 +257,90 @@ full image when &#8220;show&#8221; is selected in the Format7 Settings dialog.</
 </div>
 <div class="section" id="auto-naming">
 <h3>Auto Naming ...<a class="headerlink" href="#auto-naming" title="Permalink to this headline">¶</a></h3>
+<p>BIAS supports several autonaming options which automatically add information to
+the video filename e.g. time, date, camera number or GUID, etc. The autonaming
+options can set via the <strong>Video File: Auto Naming</strong> dialog. This dialog can be
+opened by selecting the <strong>Logging -&gt; Auto Naming...</strong> menu item.</p>
 <div class="figure align-center">
 <img alt="_images/bias_logging_autonaming_menu.png" src="_images/bias_logging_autonaming_menu.png" />
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
+<p>The <strong>Video File: Auto Naming</strong> is shown below.</p>
 <div class="figure align-center">
 <img alt="_images/bias_logging_autonaming_dialog.png" src="_images/bias_logging_autonaming_dialog.png" />
 </div>
+<p>The dialog contains three checkable items:</p>
+<ul class="simple">
+<li>Camera Identifier: adds either the camera Global Unique
+Identifier (GUID) or camera number to the logging file/directory name.</li>
+<li>Time and Date: add time and date information to the file/directory name. Time
+and date format is selectable via a drop down menu.</li>
+<li>Version Number: adds version number to the file name e.g. 1,2, ...  This
+option is is useful to prevent video files from being over written when they
+have the same name.</li>
+</ul>
 </div>
 </div>
-<div class="section" id="saving-loading-configurations">
-<span id="basic-usage-save-load-configuration"></span><h2>Saving/loading configurations<a class="headerlink" href="#saving-loading-configurations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="timer">
+<span id="basic-usage-timer"></span><h2>Timer<a class="headerlink" href="#timer" title="Permalink to this headline">¶</a></h2>
+<p>BIAS&#8217;s capture timer can be used to create timed video acquisitions.</p>
+<div class="section" id="id1">
+<h3>Enabled<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The capture timer can be enabled via the <strong>Timer -&gt; Enabled</strong> menu item. Note,
+when the capture timer is enabled the &#8220;duration&#8221; text label in the lower right
+corner will be split to show both the ellapsed capture time and total capture duration
+as set int the timer settings as follows:  &#8220;ellapsed time/total capture duration&#8221;.</p>
+<div class="figure align-center">
+<img alt="_images/bias_timer_enabled.png" src="_images/bias_timer_enabled.png" />
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Settings<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The timer settings can be specified via the <strong>Timer Settings</strong> dialog. This dialog
+can be opened by selecting the <strong>Timer -&gt; Settings...</strong> menu item.</p>
+<div class="figure align-center">
+<img alt="_images/bias_timer_settings_dialog.png" src="_images/bias_timer_settings_dialog.png" />
+</div>
+<p>The total capture duration is specified in hours (hr), minutes (min) and seconds (sec).</p>
+</div>
+</div>
+<div class="section" id="display">
+<span id="basic-usage-display"></span><h2>Display<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<img alt="_images/bias_display_menu.png" src="_images/bias_display_menu.png" />
+</div>
+<div class="section" id="orientation">
+<h3>Orientation<a class="headerlink" href="#orientation" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="_images/bias_display_orientation.png" src="_images/bias_display_orientation.png" />
+</div>
+</div>
+<div class="section" id="rotation">
+<h3>Rotation<a class="headerlink" href="#rotation" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="_images/bias_display_rotation.png" src="_images/bias_display_rotation.png" />
+</div>
+</div>
+<div class="section" id="colormap">
+<h3>ColorMap<a class="headerlink" href="#colormap" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="_images/bias_display_colormap.png" src="_images/bias_display_colormap.png" />
+</div>
+</div>
+<div class="section" id="alignment-tools">
+<h3>Alignment Tools...<a class="headerlink" href="#alignment-tools" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="_images/bias_display_alignment_tools.png" src="_images/bias_display_alignment_tools.png" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/bias_display_alignment_tools_dialog.png" src="_images/bias_display_alignment_tools_dialog.png" />
+</div>
+</div>
 </div>
 </div>
 
