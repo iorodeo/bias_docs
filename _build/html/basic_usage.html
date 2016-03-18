@@ -57,6 +57,10 @@
 <li><a class="reference internal" href="#basic-usage-camera-settings"><em>Camera Settings</em></a></li>
 <li><a class="reference internal" href="#basic-usage-logging-settings"><em>Logging Settings</em></a></li>
 <li><a class="reference internal" href="#basic-usage-timer"><em>Timer</em></a></li>
+<li><a class="reference internal" href="#basic-usage-display"><em>Display</em></a></li>
+<li><a class="reference internal" href="#basic-usage-server"><em>Server</em></a></li>
+<li><a class="reference internal" href="#basic-usage-plugins"><em>Plugins</em></a></li>
+<li><a class="reference internal" href="#basic-usage-help"><em>Help</em></a></li>
 </ul>
 <div class="section" id="saving-loading-configurations">
 <span id="basic-usage-save-load-configuration"></span><h2>Saving/loading configurations<a class="headerlink" href="#saving-loading-configurations" title="Permalink to this headline">¶</a></h2>
@@ -308,37 +312,156 @@ can be opened by selecting the <strong>Timer -&gt; Settings...</strong> menu ite
 </div>
 <div class="section" id="display">
 <span id="basic-usage-display"></span><h2>Display<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h2>
+<p>The display menu provides options for changing how the image preview appears to
+the user.  The available options include orientation, rotation, colormap, as
+well as several alignment tools.</p>
 <div class="figure align-center">
 <img alt="_images/bias_display_menu.png" src="_images/bias_display_menu.png" />
 </div>
 <div class="section" id="orientation">
 <h3>Orientation<a class="headerlink" href="#orientation" title="Permalink to this headline">¶</a></h3>
+<p>The orientation sub-menu provides the user with options to flip the preview
+image either vertically and/or horizontally.  To flip the image check the
+corresponding checkbox in the sub-menu item.</p>
 <div class="figure align-center">
 <img alt="_images/bias_display_orientation.png" src="_images/bias_display_orientation.png" />
 </div>
 </div>
 <div class="section" id="rotation">
 <h3>Rotation<a class="headerlink" href="#rotation" title="Permalink to this headline">¶</a></h3>
+<p>The rotation sub-menu provides the user with options to rotate the preview
+image either 0, 90, 180 or 270 degrees. A dot is shown next to the current
+rotation setting.</p>
 <div class="figure align-center">
 <img alt="_images/bias_display_rotation.png" src="_images/bias_display_rotation.png" />
 </div>
 </div>
 <div class="section" id="colormap">
 <h3>ColorMap<a class="headerlink" href="#colormap" title="Permalink to this headline">¶</a></h3>
+<p>The colormap sub-menu provides the user with a list of colormap which can be
+applied to the preview window. The list of options include: None (no colormap),
+Autumn, Bone, Jet, Winter, Rainbow, Ocean, Summer, Spring, Cool, Hsv, Pink, and
+Hot.</p>
 <div class="figure align-center">
 <img alt="_images/bias_display_colormap.png" src="_images/bias_display_colormap.png" />
 </div>
 </div>
 <div class="section" id="alignment-tools">
 <h3>Alignment Tools...<a class="headerlink" href="#alignment-tools" title="Permalink to this headline">¶</a></h3>
+<p>The alignment tools menu item opens the <strong>Alignment Tools</strong> dialog which
+contains several tools which can be used to help during camera alignment.</p>
 <div class="figure align-center">
 <img alt="_images/bias_display_alignment_tools.png" src="_images/bias_display_alignment_tools.png" />
 </div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
+<p>The alignment tools dialog current contains two tools: Grid and Ellipse.</p>
 <div class="figure align-center">
 <img alt="_images/bias_display_alignment_tools_dialog.png" src="_images/bias_display_alignment_tools_dialog.png" />
+</div>
+<p>The Grid alignment tools allows the user to display a grid of lines on the
+preview image. The user can choose the color and number of grid lines. An example of
+preview image with an alignment grid (color = orange, row = 3, col = 2) is shown below.</p>
+<div class="figure align-center">
+<img alt="_images/bias_display_grid_example.png" src="_images/bias_display_grid_example.png" />
+</div>
+<p>The Ellipse alignment tool allows the user to display an ellipse on the preview
+image. The user can choose the color and shape and position of the ellipse.
+Note, the ellipse alignment tool is not yet fully implemented.</p>
+</div>
+</div>
+<div class="section" id="server">
+<span id="basic-usage-server"></span><h2>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h2>
+<p>BIAS is capable of running a simple http server which enables control of the
+software via http requests from external applications.  Documentation for the
+http commands can be found here <a class="reference internal" href="ext_control_http_cmds.html#section-ext-control-http-cmds"><em>External Control HTTP Commands</em></a> The
+<strong>Server</strong> menu contains the controls and settings for this server.</p>
+<div class="figure align-center">
+<img alt="_images/bias_server_menu_2.png" src="_images/bias_server_menu_2.png" />
+</div>
+<div class="section" id="id3">
+<h3>Enabled<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>The enabled menu item allows the user to enable/disable the external control
+server. When the checkbox is ticked the external control http server is
+enabled - this is the default setting.</p>
+<div class="figure align-center">
+<img alt="_images/bias_server_enabled.png" src="_images/bias_server_enabled.png" />
+</div>
+</div>
+<div class="section" id="port">
+<h3>Port<a class="headerlink" href="#port" title="Permalink to this headline">¶</a></h3>
+<p>The port menu item opens the <strong>HTTP Server Settings</strong> dialog. Note, this is not
+yet implemented. Currently on the port for the specific camera is displayed
+next to the <strong>Settings...</strong> menu item.</p>
+<div class="figure align-center">
+<img alt="_images/bias_server_port.png" src="_images/bias_server_port.png" />
+</div>
+</div>
+<div class="section" id="commands">
+<h3>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h3>
+<p>The commands menu item opens a window with a summary of the external control
+server commands. Note, this is not yet implemented.</p>
+<div class="figure align-center">
+<img alt="_images/bias_server_commands.png" src="_images/bias_server_commands.png" />
+</div>
+</div>
+</div>
+<div class="section" id="plugins">
+<span id="basic-usage-plugins"></span><h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
+<p>The plugins menu contains controls for enabling, configuring and selecting plugins.</p>
+<div class="figure align-center">
+<img alt="_images/bias_plugins_menu.png" src="_images/bias_plugins_menu.png" />
+</div>
+<div class="section" id="id4">
+<h3>Enabled<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>The enabled menu item allows the user to enable the currently selected plugin.
+When the checkbox is ticked the plugin is enabled. Note, the currently selected
+plugin is shown in the plugin list at the bottom of the plugin menu.</p>
+<div class="figure align-center">
+<img alt="_images/bias_plugins_enabled.png" src="_images/bias_plugins_enabled.png" />
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Settings...<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Opens the settings dialog for currently selected plugin.  Note, each plugin
+will have its own settings dialog.</p>
+<div class="figure align-center">
+<img alt="_images/bias_plugins_settings.png" src="_images/bias_plugins_settings.png" />
+</div>
+<p>An example of the  settings dialog for the Grab Detector plugin is shown below.</p>
+<div class="figure align-center">
+<img alt="_images/bias_grab_detector_settings_dialog.png" src="_images/bias_grab_detector_settings_dialog.png" />
+</div>
+</div>
+<div class="section" id="plugin-list">
+<h3>Plugin List<a class="headerlink" href="#plugin-list" title="Permalink to this headline">¶</a></h3>
+<p>The plugin list is shown at the bottom of the plugin menu - separated from the
+rest of the menu via a horizontal line. The plugin list show all currently
+available plugins.  A dot is show next to the currently active plugin. Note,
+only one plugin may be active at an time.</p>
+<div class="figure align-center">
+<img alt="_images/bias_plugins_list.png" src="_images/bias_plugins_list.png" />
+</div>
+</div>
+</div>
+<div class="section" id="help">
+<span id="basic-usage-help"></span><h2>Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h2>
+<p>The help menu provides link to various help resources.</p>
+<div class="figure align-center">
+<img alt="_images/bias_help_menu.png" src="_images/bias_help_menu.png" />
+</div>
+<div class="section" id="user-manual">
+<h3>User Manual...<a class="headerlink" href="#user-manual" title="Permalink to this headline">¶</a></h3>
+<p>The user manual menu items opens a browser window open to BIAS&#8217;s documentation.
+Note, this is not yet implemented.</p>
+<div class="figure align-center">
+<img alt="_images/bias_help_user_manual.png" src="_images/bias_help_user_manual.png" />
+</div>
+</div>
+<div class="section" id="about">
+<h3>About...<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h3>
+<p>Opens the about dialog showing the current version number of the software etc.
+Note, this is not yet implemented.</p>
+<div class="figure align-center">
+<img alt="_images/bias_help_about.png" src="_images/bias_help_about.png" />
 </div>
 </div>
 </div>

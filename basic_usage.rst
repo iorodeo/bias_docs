@@ -8,6 +8,10 @@ Basic Usage
 * :ref:`basic_usage_camera_settings`
 * :ref:`basic_usage_logging_settings`
 * :ref:`basic_usage_timer`
+* :ref:`basic_usage_display`
+* :ref:`basic_usage_server`
+* :ref:`basic_usage_plugins`
+* :ref:`basic_usage_help`
 
 
 .. _basic_usage_save_load_configuration:
@@ -314,6 +318,10 @@ The total capture duration is specified in hours (hr), minutes (min) and seconds
 Display
 ---------
 
+The display menu provides options for changing how the image preview appears to
+the user.  The available options include orientation, rotation, colormap, as
+well as several alignment tools. 
+
 .. figure:: _static/bias_display_menu.png
    :align:  center
 
@@ -321,11 +329,19 @@ Display
 Orientation
 ^^^^^^^^^^^^
 
+The orientation sub-menu provides the user with options to flip the preview
+image either vertically and/or horizontally.  To flip the image check the
+corresponding checkbox in the sub-menu item.
+
 .. figure:: _static/bias_display_orientation.png
    :align:  center
 
 Rotation
 ^^^^^^^^^^^^
+
+The rotation sub-menu provides the user with options to rotate the preview
+image either 0, 90, 180 or 270 degrees. A dot is shown next to the current
+rotation setting. 
 
 .. figure:: _static/bias_display_rotation.png
    :align:  center
@@ -333,6 +349,10 @@ Rotation
 
 ColorMap
 ^^^^^^^^^^^^
+The colormap sub-menu provides the user with a list of colormap which can be
+applied to the preview window. The list of options include: None (no colormap),
+Autumn, Bone, Jet, Winter, Rainbow, Ocean, Summer, Spring, Cool, Hsv, Pink, and
+Hot.
 
 .. figure:: _static/bias_display_colormap.png
    :align:  center
@@ -340,10 +360,144 @@ ColorMap
 Alignment Tools...
 ^^^^^^^^^^^^^^^^^^^
 
+The alignment tools menu item opens the **Alignment Tools** dialog which
+contains several tools which can be used to help during camera alignment.
+
 .. figure:: _static/bias_display_alignment_tools.png
    :align:  center
 
-| 
+The alignment tools dialog current contains two tools: Grid and Ellipse. 
 
 .. figure:: _static/bias_display_alignment_tools_dialog.png
+   :align:  center
+
+The Grid alignment tools allows the user to display a grid of lines on the
+preview image. The user can choose the color and number of grid lines. An example of 
+preview image with an alignment grid (color = orange, row = 3, col = 2) is shown below.
+
+.. figure:: _static/bias_display_grid_example.png
+   :align:  center
+
+The Ellipse alignment tool allows the user to display an ellipse on the preview
+image. The user can choose the color and shape and position of the ellipse.
+Note, the ellipse alignment tool is not yet fully implemented.
+
+
+.. _basic_usage_server:
+
+Server
+---------
+
+BIAS is capable of running a simple http server which enables control of the
+software via http requests from external applications.  Documentation for the
+http commands can be found here :ref:`section_ext_control_http_cmds` The
+**Server** menu contains the controls and settings for this server.
+
+.. figure:: _static/bias_server_menu_2.png
+   :align:  center
+
+Enabled
+^^^^^^^^^^^^
+
+The enabled menu item allows the user to enable/disable the external control
+server. When the checkbox is ticked the external control http server is
+enabled - this is the default setting. 
+
+.. figure:: _static/bias_server_enabled.png
+   :align:  center
+
+Port
+^^^^^^^^^^^^
+
+The port menu item opens the **HTTP Server Settings** dialog. Note, this is not
+yet implemented. Currently on the port for the specific camera is displayed
+next to the **Settings...** menu item.
+
+.. figure:: _static/bias_server_port.png
+   :align:  center
+
+Commands
+^^^^^^^^^^^^
+
+The commands menu item opens a window with a summary of the external control
+server commands. Note, this is not yet implemented.
+
+.. figure:: _static/bias_server_commands.png
+   :align:  center
+
+
+.. _basic_usage_plugins:
+
+Plugins
+----------
+
+The plugins menu contains controls for enabling, configuring and selecting plugins.
+
+.. figure:: _static/bias_plugins_menu.png
+   :align:  center
+
+Enabled
+^^^^^^^^^^^^
+
+The enabled menu item allows the user to enable the currently selected plugin.
+When the checkbox is ticked the plugin is enabled. Note, the currently selected
+plugin is shown in the plugin list at the bottom of the plugin menu.
+
+.. figure:: _static/bias_plugins_enabled.png
+   :align:  center
+
+Settings...
+^^^^^^^^^^^^
+
+Opens the settings dialog for currently selected plugin.  Note, each plugin
+will have its own settings dialog.
+
+.. figure:: _static/bias_plugins_settings.png
+   :align:  center
+
+An example of the  settings dialog for the Grab Detector plugin is shown below.
+
+
+.. figure:: _static/bias_grab_detector_settings_dialog.png
+   :align:  center
+
+Plugin List
+^^^^^^^^^^^^
+
+The plugin list is shown at the bottom of the plugin menu - separated from the
+rest of the menu via a horizontal line. The plugin list show all currently
+available plugins.  A dot is show next to the currently active plugin. Note,
+only one plugin may be active at an time.
+
+.. figure:: _static/bias_plugins_list.png
+   :align:  center
+
+.. _basic_usage_help:
+
+Help
+----------
+
+The help menu provides link to various help resources.
+
+
+.. figure:: _static/bias_help_menu.png
+   :align:  center
+
+User Manual...
+^^^^^^^^^^^^^^^^
+
+The user manual menu items opens a browser window open to BIAS's documentation.
+Note, this is not yet implemented.
+
+.. figure:: _static/bias_help_user_manual.png
+   :align:  center
+
+
+About...
+^^^^^^^^^^^^^^^^
+
+Opens the about dialog showing the current version number of the software etc.
+Note, this is not yet implemented.
+
+.. figure:: _static/bias_help_about.png
    :align:  center

@@ -1,3 +1,5 @@
+.. _section_ext_control_http_cmds:
+
 *********************************************
 External Control HTTP Commands
 *********************************************
